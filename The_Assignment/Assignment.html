@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+
+<html  dir="ltr" lang="en" xml:lang="en">
+<head>
+    <title>C240-JavaDev-2206: Assessment: Flooring Mastery</title>
+    <link rel="shortcut icon" href="https://academy.engagelms.com/theme/image.php/engage/theme/1677568962/favicon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="moodle, C240-JavaDev-2206: Assessment: Flooring Mastery" />
+<link rel="stylesheet" type="text/css" href="https://academy.engagelms.com/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.css" /><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://academy.engagelms.com/theme/styles.php/engage/1677568962_1677568399/all" />
+<script>
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/academy.engagelms.com","homeurl":{},"sesskey":"9rHxJMqoJK","sessiontimeout":"14400","sessiontimeoutwarning":1200,"themerev":"1677568962","slasharguments":1,"theme":"engage","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1677568962","admin":"admin","svgicons":true,"usertimezone":"America\/New_York","courseId":696,"courseContextId":181962,"contextid":182110,"contextInstanceId":92189,"langrev":1677568962,"templaterev":"1677568962"};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/academy.engagelms.com\/lib\/yuilib\/3.17.2\/","comboBase":"https:\/\/academy.engagelms.com\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/academy.engagelms.com\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/academy.engagelms.com\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/academy.engagelms.com\/theme\/yui_combo.php?m\/1677568962\/","combine":true,"comboBase":"https:\/\/academy.engagelms.com\/theme\/yui_combo.php?","ext":false,"root":"m\/1677568962\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-formchangechecker":{"requires":["base","event-focus","moodle-core-event"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-languninstallconfirm":{"requires":["base","node","moodle-core-notification-confirm","moodle-core-notification-alert"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-form-passwordunmask":{"requires":[]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_attendance-groupfilter":{"requires":["base","node"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-core-notification-confirm","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-qbank_editquestion-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-tool_monitor-dropdown":{"requires":["base","event","node"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emojipicker-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_fullscreen-button":{"requires":["event-resize","moodle-editor_atto-plugin"]},"moodle-atto_h5p-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_html-beautify":{},"moodle-atto_html-button":{"requires":["promise","moodle-editor_atto-plugin","moodle-atto_html-beautify","moodle-atto_html-codemirror","event-valuechange"]},"moodle-atto_html-codemirror":{"requires":["moodle-atto_html-codemirror-skin"]},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_preview-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/academy.engagelms.com\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/academy.engagelms.com\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1677568962\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/academy.engagelms.com\/lib\/javascript.php\/1677568962\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/academy.engagelms.com\/lib\/javascript.php\/1677568962\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]},"mathjax":{"name":"mathjax","fullpath":"https:\/\/cdn.jsdelivr.net\/npm\/mathjax@2.7.9\/MathJax.js?delayStartupUntil=configured"}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</meta><script type="text/javascript" src="/ruxitagentjs_ICA2NVfqru_10259230221142207.js" data-dtconfig="rid=RID_295647205|rpid=-1400588974|domain=engagelms.com|reportUrl=/rb_bf67049ldu|app=ea7c4b59f27d43eb|coo=1|featureHash=ICA2NVfqru|vcv=2|rdnt=1|uxrgce=1|bp=3|cuc=7pfhlik4|mel=100000|ssv=4|lastModification=1678029127150|dtVersion=10259230221142207|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA2NVfqru_10259230221142207.js"></script></head>
+<body  id="page-mod-assign-view" class="format-topics limitedwidth  path-mod path-mod-assign chrome dir-ltr lang-en yui-skin-sam yui3-skin-sam academy-engagelms-com pagelayout-incourse course-696 context-182110 cmid-92189 cm-type-assign category-8 uses-drawers engage">
+<div class="toast-wrapper mx-auto py-0 fixed-top" role="status" aria-live="polite"></div>
+<div id="page-wrapper" class="d-print-block">
+
+    <div>
+    <a class="sr-only sr-only-focusable" href="#maincontent">Skip to main content</a>
+</div><script src="https://academy.engagelms.com/lib/javascript.php/1677568962/lib/polyfills/polyfill.js"></script>
+<script src="https://academy.engagelms.com/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js"></script><script src="https://academy.engagelms.com/lib/javascript.php/1677568962/lib/javascript-static.js"></script>
+<script src="https://academy.engagelms.com/theme/javascript.php/engage/1677568962/head"></script>
+<script>
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+
+    <nav class="navbar fixed-top navbar-light bg-white navbar-expand" aria-label="Site navigation">
+    
+        <button class="navbar-toggler aabtn d-block d-md-none px-1 my-1 border-0" data-toggler="drawers" data-action="toggle" data-target="theme_boost-drawers-primary">
+            <span class="navbar-toggler-icon"></span>
+            <span class="sr-only">Side panel</span>
+        </button>
+    
+        <a href="https://academy.engagelms.com/my/" class="navbar-brand d-none d-md-flex align-items-center m-0 mr-4 p-0 aabtn">
+    
+                <img src="https://academy.engagelms.com/pluginfile.php/1/core_admin/logocompact/300x300/1677568962/Compact%20Logo.png" class="logo mr-1" alt="Academy">
+            </a>
+            <div class="primary-navigation">
+                <nav class="moremenu navigation">
+                    <ul id="moremenu-6404eea1ea85d-navbar-nav" role="menubar" class="nav more-nav navbar-nav">
+                                <li data-key="home" class="nav-item" role="none" data-forceintomoremenu="false">
+                                            <a role="menuitem" class="nav-link  "
+                                                href="https://academy.engagelms.com/?redirect=0"
+                                                
+                                                tabindex="-1"
+                                            >
+                                                Home
+                                            </a>
+                                </li>
+                                <li data-key="myhome" class="nav-item" role="none" data-forceintomoremenu="false">
+                                            <a role="menuitem" class="nav-link  "
+                                                href="https://academy.engagelms.com/my/"
+                                                
+                                                tabindex="-1"
+                                            >
+                                                Dashboard
+                                            </a>
+                                </li>
+                                <li data-key="mycourses" class="nav-item" role="none" data-forceintomoremenu="false">
+                                            <a role="menuitem" class="nav-link  "
+                                                href="https://academy.engagelms.com/my/courses.php"
+                                                
+                                                tabindex="-1"
+                                            >
+                                                My courses
+                                            </a>
+                                </li>
+                        <li role="none" class="nav-item dropdown dropdownmoremenu d-none" data-region="morebutton">
+                            <a class="dropdown-toggle nav-link " href="#" id="moremenu-dropdown-6404eea1ea85d" role="menuitem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+                                More
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-left" data-region="moredropdown" aria-labelledby="moremenu-dropdown-6404eea1ea85d" role="menu">
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+    
+        <ul class="navbar-nav d-none d-md-flex my-1 px-1">
+                <!-- page_heading_menu -->
+                
+            </ul>
+    
+        <div id="usernavigation" class="navbar-nav ml-auto">
+                    <div id="searchinput-navbar-6404eea1ef8006404eea1cc95c4" class="simplesearchform">
+    <div class="collapse" id="searchform-navbar">
+        <form autocomplete="off" action="https://academy.engagelms.com/search/index.php" method="get" accept-charset="utf-8" class="mform form-inline searchform-navbar">
+                <input type="hidden" name="context" value="182110">
+            <div class="input-group">
+                <label for="searchinput-6404eea1ef8006404eea1cc95c4">
+                    <span class="sr-only">Search</span>
+                </label>
+                    <input type="text"
+                       id="searchinput-6404eea1ef8006404eea1cc95c4"
+                       class="form-control withclear"
+                       placeholder="Search"
+                       aria-label="Search"
+                       name="q"
+                       data-region="input"
+                       autocomplete="off"
+                    >
+                    <a class="btn btn-close"
+                        data-action="closesearch"
+                        data-toggle="collapse"
+                        href="#searchform-navbar"
+                        role="button"
+                    >
+                        <i class="icon fa fa-times fa-fw " aria-hidden="true"  ></i>
+                        <span class="sr-only">Close</span>
+                    </a>
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-submit" data-action="submit">
+                        <i class="icon fa fa-search fa-fw " aria-hidden="true"  ></i>
+                        <span class="sr-only">Search</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <a
+        class="btn btn-open rounded-0 nav-link"
+        data-toggle="collapse"
+        data-action="opensearch"
+        href="#searchform-navbar"
+        role="button"
+        aria-expanded="false"
+        aria-controls="searchform-navbar"
+        title="Toggle search input"
+    >
+        <i class="icon fa fa-search fa-fw " aria-hidden="true"  ></i>
+        <span class="sr-only">Toggle search input</span>
+    </a>
+</div>
+                <div class="divider border-left h-75 align-self-center mx-1"></div>
+            <div class="popover-region collapsed popover-region-notifications"
+    id="nav-notification-popover-container" data-userid="4658"
+    data-region="popover-region">
+    <div class="popover-region-toggle nav-link icon-no-margin"
+        data-region="popover-region-toggle"
+        role="button"
+        aria-controls="popover-region-container-6404eea1f0a176404eea1cc95c5"
+        aria-haspopup="true"
+        aria-label=" Show notification window with no new notifications   "
+        tabindex="0">
+                <i class="icon fa fa-bell-o fa-fw "  title="Toggle notifications menu" role="img" aria-label="Toggle notifications menu"></i>
+        <div
+            class="count-container hidden"
+            data-region="count-container"
+            aria-hidden=true
+        >
+            0
+        </div>
+
+    </div>
+    <div 
+        id="popover-region-container-6404eea1f0a176404eea1cc95c5"
+        class="popover-region-container"
+        data-region="popover-region-container"
+        aria-expanded="false"
+        aria-hidden="true"
+        aria-label="Notification window"
+        role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Notifications</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <a class="mark-all-read-button"
+           href="#"
+           title="Mark all as read"
+           data-action="mark-all-read"
+           role="button"
+           aria-label="Mark all as read">
+            <span class="normal-icon"><i class="icon fa fa-check fa-fw " aria-hidden="true"  ></i></span>
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+        </a>
+            <a href="https://academy.engagelms.com/message/notificationpreferences.php"
+               title="Notification preferences"
+               aria-label="Notification preferences">
+                <i class="icon fa fa-cog fa-fw " aria-hidden="true"  ></i></a>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="all-notifications"
+            data-region="all-notifications"
+            role="log"
+            aria-busy="false"
+            aria-atomic="false"
+            aria-relevant="additions"></div>
+        <div class="empty-message" tabindex="0" data-region="empty-message">You have no notifications</div>
+
+            </div>
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+        </div>
+                <a class="see-all-link"
+                    href="https://academy.engagelms.com/message/output/popup/notifications.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">See all</div>
+                    </div>
+                </a>
+    </div>
+</div><div class="popover-region collapsed popover-region-mail"
+            id="nav-mail-popover-container"
+
+    data-region="popover-region">
+    <div class="popover-region-toggle nav-link icon-no-margin"
+        data-region="popover-region-toggle"
+        role="button"
+        aria-controls="popover-region-container-6404eea1f34c96404eea1cc95c6"
+        aria-haspopup="true"
+        aria-label="Toggle mail menu"
+        tabindex="0">
+                <i class="icon fa fa-envelope fa-fw "  title="Toggle mail menu" role="img" aria-label="Toggle mail menu"></i>
+
+    </div>
+    <div 
+        id="popover-region-container-6404eea1f34c96404eea1cc95c6"
+        class="popover-region-container"
+        data-region="popover-region-container"
+        aria-expanded="false"
+        aria-hidden="true"
+        aria-label="Mail menu"
+        role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Mail</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <a href="https://academy.engagelms.com/local/mail/create.php?c=696&amp;sesskey=9rHxJMqoJK" class="mail-navbar-menu-compose-link">
+            Compose
+        </a>
+        <a href="https://academy.engagelms.com/local/mail/preferences.php" title="Preferences">
+            <i class="icon fa fa-cog fa-fw "  title="Preferences" role="img" aria-label="Preferences"></i>
+            <span style="display: none;">Preferences</span>
+        </a>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="mail-navbar-menu">
+            <a href="https://academy.engagelms.com/local/mail/view.php?t=inbox" 
+                class="mail-navbar-menu-item
+                    
+                    ">
+                
+                
+                <i class="icon fa fa-inbox fa-fw " aria-hidden="true"  ></i>
+                Inbox
+            </a>
+            <a href="https://academy.engagelms.com/local/mail/view.php?t=starred" 
+                class="mail-navbar-menu-item
+                    
+                    ">
+                
+                
+                <i class="icon fa fa-star fa-fw " aria-hidden="true"  ></i>
+                Starred
+            </a>
+            <a href="https://academy.engagelms.com/local/mail/view.php?t=drafts" 
+                class="mail-navbar-menu-item
+                    
+                    ">
+                
+                
+                <i class="icon fa fa-file fa-fw " aria-hidden="true"  ></i>
+                Drafts
+            </a>
+            <a href="https://academy.engagelms.com/local/mail/view.php?t=sent" 
+                class="mail-navbar-menu-item
+                    
+                    ">
+                
+                
+                <i class="icon fa fa-paper-plane fa-fw " aria-hidden="true"  ></i>
+                Sent
+            </a>
+            <a href="https://academy.engagelms.com/local/mail/view.php?t=trash" 
+                class="mail-navbar-menu-item
+                    
+                    ">
+                
+                
+                <i class="icon fa fa-trash fa-fw " aria-hidden="true"  ></i>
+                Trash
+            </a>
+            <a href="https://academy.engagelms.com/local/mail/view.php?t=course&amp;c=1116" title="E000 Columbia Capstone Project"
+                class="mail-navbar-menu-item
+                    
+                    ">
+                
+                
+                <i class="icon fa fa-university fa-fw " aria-hidden="true"  ></i>
+                E000 Capstone
+            </a>
+            <a href="https://academy.engagelms.com/local/mail/view.php?t=course&amp;c=1111" title="E001 Learning Journey: Power Skills"
+                class="mail-navbar-menu-item
+                    
+                    ">
+                
+                
+                <i class="icon fa fa-university fa-fw " aria-hidden="true"  ></i>
+                E001 Power Skills
+            </a>
+            <a href="https://academy.engagelms.com/local/mail/view.php?t=course&amp;c=1103" title="E003 Learning Journey Level 1: Azure Fundamentals"
+                class="mail-navbar-menu-item
+                    
+                    ">
+                
+                
+                <i class="icon fa fa-university fa-fw " aria-hidden="true"  ></i>
+                E003 Azure Fundamentals
+            </a>
+            <a href="https://academy.engagelms.com/local/mail/view.php?t=course&amp;c=1104" title="E002 Learning Journey Level 1: AWS Cloud Practitioner"
+                class="mail-navbar-menu-item
+                    
+                    ">
+                
+                
+                <i class="icon fa fa-university fa-fw " aria-hidden="true"  ></i>
+                E002 AWS Cloud Practitioner
+            </a>
+            <a href="https://academy.engagelms.com/local/mail/view.php?t=course&amp;c=1040" title="Self-Paced: REST Web Services and HTTP Requests"
+                class="mail-navbar-menu-item
+                    
+                    ">
+                
+                
+                <i class="icon fa fa-university fa-fw " aria-hidden="true"  ></i>
+                REST and HTTP
+            </a>
+            <a href="https://academy.engagelms.com/local/mail/view.php?t=course&amp;c=696" title="C240 Full Stack Development Using Java and React (2206)"
+                class="mail-navbar-menu-item
+                    
+                    ">
+                
+                
+                <i class="icon fa fa-university fa-fw " aria-hidden="true"  ></i>
+                C240-JavaDev-2206
+            </a>
+            <a href="https://academy.engagelms.com/local/mail/view.php?t=course&amp;c=382" title="Self-Paced: JavaScript"
+                class="mail-navbar-menu-item
+                    
+                    ">
+                
+                
+                <i class="icon fa fa-university fa-fw " aria-hidden="true"  ></i>
+                SP_JavaScript
+            </a>
+            <a href="https://academy.engagelms.com/local/mail/view.php?t=course&amp;c=324" title="Self-Paced DevOps Engineer (21.08)"
+                class="mail-navbar-menu-item
+                    
+                    ">
+                
+                
+                <i class="icon fa fa-university fa-fw " aria-hidden="true"  ></i>
+                SP DevOps Eng
+            </a>
+            <a href="https://academy.engagelms.com/local/mail/view.php?t=course&amp;c=294" title="Self-Paced: Remote Work Workshop (2109)"
+                class="mail-navbar-menu-item
+                    
+                    ">
+                
+                
+                <i class="icon fa fa-university fa-fw " aria-hidden="true"  ></i>
+                SP-Remote Work 2109
+            </a>
+        </div>
+
+            </div>
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+        </div>
+    </div>
+</div>
+            <div class="d-flex align-items-stretch usermenu-container" data-region="usermenu">
+                    <div class="usermenu">
+                            <div class="dropdown show">
+                                <a href="#" role="button" id="user-menu-toggle" data-toggle="dropdown" aria-label="User menu"
+                                   aria-haspopup="true" aria-controls="user-action-menu" class="btn dropdown-toggle">
+                                    <span class="userbutton">
+                                        <span class="avatars">
+                                                <span class="avatar current">
+                                                    <img src="https://academy.engagelms.com/pluginfile.php/193529/user/icon/engage/f2?rev=695471" class="userpicture" width="35" height="35" alt="" />
+                                                </span>
+                                        </span>
+                                    </span>
+                                </a>
+                                <div id="user-action-menu" class="dropdown-menu dropdown-menu-right">
+                                    <div id="usermenu-carousel" class="carousel slide" data-touch="false" data-interval="false" data-keyboard="false">
+                                        <div class="carousel-inner">
+                                            <div id="carousel-item-main" class="carousel-item active" role="menu" tabindex="-1" aria-label="User">
+                                                        <a href="https://academy.engagelms.com/user/profile.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Profile
+                                                        </a>
+                                                    
+                                                        <a href="https://academy.engagelms.com/grade/report/overview/index.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Grades
+                                                        </a>
+                                                    
+                                                        <a href="https://academy.engagelms.com/calendar/view.php?view=month" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Calendar
+                                                        </a>
+                                                    
+                                                        <a href="https://academy.engagelms.com/user/files.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Private files
+                                                        </a>
+                                                    
+                                                        <a href="https://academy.engagelms.com/reportbuilder/index.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Reports
+                                                        </a>
+                                                    
+                                                    <div class="dropdown-divider"></div>
+                                                        <a href="https://academy.engagelms.com/user/preferences.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Preferences
+                                                        </a>
+                                                    <div class="dropdown-divider"></div>
+                                                        <a href="https://academy.engagelms.com/login/logout.php?sesskey=9rHxJMqoJK" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Log out
+                                                        </a>
+                                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+            
+        </div>
+    </nav>
+    
+
+<div  class="drawer drawer-left drawer-primary d-print-none not-initialized" data-region="fixed-drawer" id="theme_boost-drawers-primary" data-preference="" data-state="show-drawer-primary" data-forceopen="0" data-close-on-resize="1">
+    <div class="drawerheader">
+        <button
+            class="btn drawertoggle icon-no-margin hidden"
+            data-toggler="drawers"
+            data-action="closedrawer"
+            data-target="theme_boost-drawers-primary"
+            data-toggle="tooltip"
+            data-placement="right"
+            title="Close drawer"
+        >
+            <i class="icon fa fa-times fa-fw " aria-hidden="true"  ></i>
+        </button>
+    </div>
+    <div class="drawercontent drag-container" data-usertour="scroller">
+                <div class="list-group">
+                <a href="https://academy.engagelms.com/?redirect=0" class="list-group-item list-group-item-action  " >
+                    Home
+                </a>
+                <a href="https://academy.engagelms.com/my/" class="list-group-item list-group-item-action  " >
+                    Dashboard
+                </a>
+                <a href="https://academy.engagelms.com/my/courses.php" class="list-group-item list-group-item-action  " >
+                    My courses
+                </a>
+        </div>
+
+    </div>
+</div>
+        <div  class="drawer drawer-left  d-print-none not-initialized" data-region="fixed-drawer" id="theme_boost-drawers-courseindex" data-preference="drawer-open-index" data-state="show-drawer-left" data-forceopen="0" data-close-on-resize="0">
+    <div class="drawerheader">
+        <a class="coursehomelink" href="https://academy.engagelms.com/course/view.php?id=696"><i class="icon fa fa-home" aria-hidden="true"></i>Course home</a>
+        <button
+            class="btn drawertoggle icon-no-margin hidden"
+            data-toggler="drawers"
+            data-action="closedrawer"
+            data-target="theme_boost-drawers-courseindex"
+            data-toggle="tooltip"
+            data-placement="right"
+            title="Close course index"
+        >
+            <i class="icon fa fa-times fa-fw " aria-hidden="true"  ></i>
+        </button>
+    </div>
+    <div class="drawercontent drag-container" data-usertour="scroller">
+                        <nav id="courseindex" class="courseindex">
+    <div id="courseindex-content">
+        <div data-region="loading-placeholder-content" aria-hidden="true" id="6404eea1cc95b6404eea1cc95c1-course-index-placeholder">
+            <ul class="media-list">
+                <li class="media">
+                    <div class="media-body col-md-6 p-0 d-flex align-items-center">
+                        <div class="bg-pulse-grey rounded-circle mr-2"></div>
+                        <div class="bg-pulse-grey w-100"></div>
+                    </div>
+                </li>
+                <li class="media">
+                    <div class="media-body col-md-6 p-0 d-flex align-items-center">
+                        <div class="bg-pulse-grey rounded-circle mr-2"></div>
+                        <div class="bg-pulse-grey w-100"></div>
+                    </div>
+                </li>
+                <li class="media">
+                    <div class="media-body col-md-6 p-0 d-flex align-items-center">
+                        <div class="bg-pulse-grey rounded-circle mr-2"></div>
+                        <div class="bg-pulse-grey w-100"></div>
+                    </div>
+                </li>
+                <li class="media">
+                    <div class="media-body col-md-6 p-0 d-flex align-items-center">
+                        <div class="bg-pulse-grey rounded-circle mr-2"></div>
+                        <div class="bg-pulse-grey w-100"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    </div>
+</div>
+    <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers   drag-container">
+        <div id="topofscroll" class="main-inner">
+            <div class="drawer-toggles d-flex">
+                    <div class="drawer-toggler drawer-left-toggle open-nav d-print-none">
+                        <button
+                            class="btn icon-no-margin"
+                            data-toggler="drawers"
+                            data-action="toggle"
+                            data-target="theme_boost-drawers-courseindex"
+                            data-toggle="tooltip"
+                            data-placement="right"
+                            title="Open course index"
+                        >
+                            <span class="sr-only">Open course index</span>
+                            <i class="icon fa fa-list fa-fw " aria-hidden="true"  ></i>
+                        </button>
+                    </div>
+            </div>
+            <header id="page-header" class="header-maxwidth d-print-none">
+    <div class="w-100">
+        <div class="d-flex flex-wrap">
+            <div id="page-navbar">
+                <nav role="navigation">
+    <ol class="breadcrumb">
+                <li class="breadcrumb-item "><a href="https://academy.engagelms.com/course/view.php?id=696#section-8" title="C240 Full Stack Development Using Java and React (2206)">C240 Full Stack Development Using Java and React (2206)</a></li>
+                <li class="breadcrumb-item">Assessment: Flooring Mastery</li>
+    </ol>
+</nav>
+            </div>
+            <div class="ml-auto d-flex">
+                
+            </div>
+            <div id="course-header">
+                
+            </div>
+        </div>
+        <div class="d-flex align-items-center">
+                    <div class="mr-auto">
+                        <div class="page-context-header"><div class="page-header-image mr-2"><div class="assessment activityiconcontainer modicon_assign"><img class="icon activityicon" alt="" aria-hidden="true" src="https://academy.engagelms.com/theme/image.php/engage/assign/1677568962/monologo" /></div></div><div class="page-header-headings"><div class="text-muted text-uppercase small line-height-3">Assignment</div><h1 class="h2">Assessment: Flooring Mastery</h1></div></div>
+                    </div>
+            <div class="header-actions-container ml-auto" data-region="header-actions-container">
+            </div>
+        </div>
+    </div>
+</header>
+            <div id="page-content" class="pb-3 d-print-block">
+                <div id="region-main-box">
+                    <section id="region-main" aria-label="Content">
+
+                        <span class="notifications" id="user-notifications"></span>
+                            <span id="maincontent"></span>
+                            <div class="activity-header" data-for="page-activity-header">
+                              <span class="sr-only">Completion requirements</span>
+                              <div data-region="activity-information" data-activityname="Assessment: Flooring Mastery" class="activity-information">
+
+
+    <div data-region="activity-dates" class="activity-dates">
+        <div class="description-inner">
+                <div>
+                    <strong>Opened:</strong> Tuesday, 17 November 2020, 12:00 AM
+                </div>
+        </div>
+    </div>
+</div>
+                                <div class="activity-description" id="intro">
+                                  <div class="box py-3 generalbox boxaligncenter"><div class="no-overflow"><div id="lesson-content">
+  <h2>Overview</h2>
+  <p>
+    The goal of this mastery project is to create an application that can read and write flooring
+    orders for TSG Corp. Your complete application must demonstrate your understanding of all the
+    topics covered in the prior sections, including:
+  </p>
+  <ul>
+    <li>N-tier/MVC architecture, including the use of a service layer</li>
+    <li>Interfaces</li>
+    <li>Spring dependency Injection</li>
+    <li>Unit Testing</li>
+  </ul>
+  <p>
+    We have covered all of the technical skills needed to complete this assignment. It is your job
+    to think critically about this project, ask clarifying questions where requirements and features
+    are not clear, and come up with a solid design and game plan before you begin coding. It is
+    essential to your success that you don't just "throw code" at the problem and hope that
+    something sticks. We want you to use the background skills and techniques covered so far to
+    synthesize a solution to this problem.
+  </p>
+  <h3>Architectural Guidance</h3>
+  <ol>
+    <li>
+      Use N-tier development and MVC principles in structuring code to handle products, taxes, and
+      orders appropriately. Your application should follow the MVC pattern presented in the course.
+    </li>
+    <li>
+      Use unit tests and integration tests to ensure that your application's data layers and
+      business logic (service layer) code is covered.
+    </li>
+  </ol>
+  <h3>Rules of Flooring Mastery</h3>
+  <ol>
+    <li>
+      We are using an enterprise MVC architecture for this project, so your code must be organized
+      into reasonable classes. You will draw a UML class diagram and high-level flowchart before
+      proceeding with writing code.
+    </li>
+    <li>
+      For an enterprise architecture, our code must have layers:
+      <ul>
+        <li>
+          The <code>model</code> package may only contain classes that have data members
+          (properties).
+        </li>
+        <li>
+          The <code>dao</code> package contains classes that are responsible for persisting data.
+        </li>
+        <li>The <code>controller</code> package contains classes that orchestrate the program.</li>
+        <li>The <code>view</code> package contains classes that interact with the user.</li>
+        <li>The <code>service</code>package contains the service layer components.</li>
+        <li>
+          The <code>UserIO</code> class (along with the view component) will handle all console IO
+          for the user.
+        </li>
+      </ul>
+    </li>
+    <li>
+      Build this application following the process outlined in the
+      <em>Agile Approach Checklist for Console Applications </em>
+    </li>
+  </ol>
+  <h2>Requirements</h2>
+  <p>
+    Sample Data Files:
+    <a href="https://the-software-guild.s3.amazonaws.com/bootcamp-v2.6/oop-java/mastery/SampleFileData.zip"><strong>SampleFileData.zip</strong></a>
+  </p>
+  <p>The application will use 3 separate file formats for information.</p>
+  <h3>Orders Files &amp; Format</h3>
+  <p>
+    All orders are stored within an Orders folder. A new order file is created for each sales day.
+    The file name is guaranteed to be unique for that day because the date is part of the file name.
+    When creating new order files the file name should be in this format:
+    <code>Orders_MMDDYYYY.txt</code>.
+  </p>
+  <p>
+    With this format, order file for Augusst 21st, 2017 would be named
+    <code>Orders_08212017.txt</code>.
+  </p>
+  <p>
+    The order file should contain a header row. Data rows will contain the following fields and
+    should be in this order:
+  </p>
+  <ol>
+    <li>OrderNumber – Integer</li>
+    <li>CustomerName – String</li>
+    <li>State – String</li>
+    <li>TaxRate – BigDecimal</li>
+    <li>ProductType – String</li>
+    <li>Area – BigDecimal</li>
+    <li>CostPerSquareFoot – BigDecimal</li>
+    <li>LaborCostPerSquareFoot – BigDecimal</li>
+    <li>MaterialCost – BigDecimal</li>
+    <li>LaborCost – BigDecimal</li>
+    <li>Tax – BigDecimal</li>
+    <li>Total – BigDecimal</li>
+  </ol>
+  <p>Here is a sample line from an orders file:</p>
+  <figure>
+    <pre class="prettyprint nocode prettyprinted" style="">1,Ada Lovelace,CA,25.00,Tile,249.00,3.50,4.15,871.50,1033.35,476.21,2381.06</pre>
+  </figure>
+  <p>
+    <code>Orders_06012013.txt</code> is a sample file which is included in the sample download
+    above.
+  </p>
+  <p>Some of the order fields are calculations:</p>
+  <ul>
+    <li>MaterialCost = (Area * CostPerSquareFoot)</li>
+    <li>LaborCost = (Area * LaborCostPerSquareFoot)</li>
+    <li>
+      Tax = (MaterialCost + LaborCost) * (TaxRate/100)
+      <ul>
+        <li>Tax rates are stored as whole numbers</li>
+      </ul>
+    </li>
+    <li>Total = (MaterialCost + LaborCost + Tax)</li>
+  </ul>
+  <h3>Tax File &amp; Format</h3>
+  <p>
+    The tax information can be found in <code>Data/Taxes.txt</code>. This file will contain the
+    following fields:
+  </p>
+  <ol>
+    <li>StateAbbreviation – String</li>
+    <li>StateName – String</li>
+    <li>TaxRate – BigDecimal</li>
+  </ol>
+  <p>Here is a sample line from the taxes file:</p>
+  <figure>
+    <pre class="prettyprint nocode prettyprinted" style="">TX,Texas,4.45</pre>
+  </figure>
+  <h3>Products File &amp; Format</h3>
+  <p>
+    The current product information can be found in <code>Data/Products.txt</code>. It contains the
+    following fields:
+  </p>
+  <ol>
+    <li>ProductType – String</li>
+    <li>CostPerSquareFoot – BigDecimal</li>
+    <li>LaborCostPerSquareFoot – BigDecimal</li>
+  </ol>
+  <p>Here is a sample line from the products file:</p>
+  <figure>
+    <pre class="prettyprint nocode prettyprinted" style="">Tile,3.50,4.15</pre>
+  </figure>
+  <h3>User Stories</h3>
+  <p>The UI should start with a menu to prompt the user for what they would like to do:</p>
+  <figure>
+    <pre class="prettyprint nocode prettyprinted" style="">  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+&nbsp;&nbsp; * &lt;&lt;Flooring Program&gt;&gt;
+&nbsp;&nbsp; * 1. Display Orders
+&nbsp;&nbsp; * 2. Add an Order
+&nbsp;&nbsp; * 3. Edit an Order
+&nbsp;&nbsp; * 4. Remove an Order
+&nbsp;&nbsp; * 5. Export All Data
+&nbsp;&nbsp; * 6. Quit
+&nbsp;&nbsp; *
+&nbsp;&nbsp; * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *</pre>
+  </figure>
+  <h3>Display Orders</h3>
+  <p>
+    Display orders will ask the user for a date and then display the orders for that date. If no
+    orders exist for that date, it will display an error message and return the user to the main
+    menu.
+  </p>
+  <h3>Add an Order</h3>
+  <p>To add an order will query the user for each piece of order data necessary:</p>
+  <ol>
+    <li><strong>Order Date</strong> – Must be in the future</li>
+    <li>
+      <strong>Customer Name</strong> – May not be blank, allowed to contain [a-z][0-9] as well as
+      periods and comma characters. "Acme, Inc." is a valid name.
+    </li>
+    <li>
+      <strong>State</strong> – Entered states must be checked against the tax file. If the state
+      does not exist in the tax file we cannot sell there. If the tax file is modified to include
+      the state, it should be allowed without changing the application code.
+    </li>
+    <li>
+      <strong>Product Type</strong> – Show a list of available products and pricing information to
+      choose from. Again, if a product is added to the file it should show up in the application
+      without a code change.
+    </li>
+    <li>
+      <strong>Area</strong> – The area must be a positive decimal. Minimum order size is 100 sq ft.
+    </li>
+  </ol>
+  <p>
+    The remaining fields are calculated from the user entry and the tax/product information in the
+    files. Show a summary of the order once the calculations are completed and prompt the user as to
+    whether they want to place the order (Y/N). If yes, the data will be added to in-memory storage.
+    If no, simply return to the main menu.
+  </p>
+  <p>
+    The system should generate an order number for the user based on the next available order # (so
+    if there are two orders and the max order number is 4, the next order number should be 5).
+  </p>
+  <h3>Edit an Order</h3>
+  <p>
+    Edit will ask the user for a date and order number. If the order exists for that date, it will
+    ask the user for each piece of order data but display the existing data. If the user enters
+    something new, it will replace that data; if the user hits Enter without entering data, it will
+    leave the existing data in place. For example:
+  </p>
+  <figure>
+    <pre class="prettyprint nocode prettyprinted" style="">Enter customer name (Ada Lovelace):</pre>
+  </figure>
+  <p>
+    If the user enters a new name, the name will replace Ada Lovelace. If the user hits enter
+    without entering any data, it will leave the data as-is.
+  </p>
+  <p>Only certain data is allowed to be changed:</p>
+  <ul>
+    <li>CustomerName</li>
+    <li>State</li>
+    <li>ProductType</li>
+    <li>Area</li>
+  </ul>
+  <p>
+    If the state, product type, or area are changed, the order will need to be recalculated. Order
+    date may not be changed!
+  </p>
+  <p>
+    After querying for each editable field display a summary of the new order information and prompt
+    for whether the edit should be saved. If yes, replace the data in the file then return to the
+    main menu. If no, do not save and return to the main menu.
+  </p>
+  <h3>Remove an Order</h3>
+  <p>
+    For removing an order, the system should ask for the date and order number. If it exists, the
+    system should display the order information and prompt the user if they are sure. If yes, it
+    should be removed from the list.
+  </p>
+  <h3>Quit</h3>
+  <p>On quit, exit the application.</p>
+  <h3>Stretch Goal: Export Data</h3>
+  <p>
+    Selecting this option should save all active orders files to a file called
+    <em>DataExport.txt</em> within a <em>Backup</em> folder. Exporting the order data multiple
+    times should overwrite the data within the file with the latest active order information.
+    However, unlike other order files, an order's line item in this DataExport file should also
+    include the date in MM-DD-YYYY format, and the file's header should reflect this addition.
+  </p>
+  <p>For example, the a line of an example export, showcasing an order on June 12th, 2013:</p>
+  <figure>
+    <pre class="prettyprint nocode"><code>1,Ada Lovelace,CA,25.00,Tile,249.00,3.50,4.15,871.50,1033.35,476.21,2381.06,06-12-2013</code></pre>
+  </figure>
+  <h2>Additional Guidance</h2>
+  <ul>
+    <li>
+      Any time a user enters invalid data, the system should ask them again until they enter valid
+      data. A user should not be able to crash the application with invalid data.
+    </li>
+    <li>
+      We are using a layered architecture for this project. Thus your code must be organized into
+      reasonable well-named classes and split into correct packages.
+    </li>
+    <li>
+      Please submit your project plan with your code. This can be flowcharts, outlines, pseudocode,
+      or any other documentation and planning technique.
+    </li>
+    <li>You must unit test your DAO and ServiceLayers.</li>
+  </ul>
+  <h3>Some Tips</h3>
+  <ul>
+    <li>
+      Build this application following the process outlined in the
+      <em>Agile Approach Checklist for Console Applications</em> (as specified in the Rules of
+      Flooring Mastery section above). This process will help you approach the project in a logical
+      and orderly manner.
+    </li>
+    <li>
+      If you get stuck, ask an instructor for general guidance on what you should be looking for.
+      The instructor will not write the code for you, but advice is always free.
+    </li>
+    <li>
+      There are places where this specification has been left open to interpretation, this is
+      intentional. When on the job you will frequently have to ask clarifying questions to business
+      stakeholders. Be sure to ask a staff member for general guidance on any features you do not
+      understand.
+    </li>
+    <li>
+      Try to work on pieces of functionality in isolation and test them before moving on. Working on
+      too large of a chunk at once leads to difficulties in troubleshooting and poor separation of
+      concerns.
+    </li>
+    <li>
+      Think, then code. If you do not have a plan for each workflow, you will not be able to
+      complete this project.
+    </li>
+    <li>
+      Use prior code samples and assessments as inspiration for this project. At this point in the
+      course you should be realizing that there are patterns for creating a layered data-drive
+      application.
+    </li>
+  </ul>
+  <h2>Submitting Your Assessment</h2>
+  <p>Submit your files using instructions provided by your instructor.<br></p>
+  <p>
+    After submitting your work, schedule a time with a staff member to review your code. If you are
+    attending this class in person, your code will be reviewed during the weekly code review.
+  </p>
+  <p>
+    Be prepared to answer questions about your code and thought processes when you complete the code
+    review.
+  </p>
+</div></div></div>
+                                </div>
+                              </div>
+                        <div role="main"><div class="container-fluid mb-4">
+    <div class="row">
+        <div class="col-xs-6 mr-3">
+                    <div class="singlebutton">
+                        <form method="get" action="https://academy.engagelms.com/mod/assign/view.php" >
+                                <input type="hidden" name="id" value="92189">
+                                <input type="hidden" name="action" value="editsubmission">
+                            <button type="submit" class="btn btn-primary"
+                                id="single_button6404eea1cc95c9"
+                                
+                                
+                                >Add submission</button>
+                        </form>
+                    </div>
+        </div>
+    </div>
+</div><div class="submissionstatustable"><h3>Submission status</h3><div class="box py-3 boxaligncenter submissionsummarytable"><div class="table-responsive"><table class="generaltable table-bordered">
+<tbody><tr class="">
+<th class="cell c0" style="" scope="row">Submission status</th>
+<td class="cell c1 lastcol" style="">No submissions have been made yet</td>
+</tr>
+<tr class="">
+<th class="cell c0" style="" scope="row">Grading status</th>
+<td class="submissiongraded cell c1 lastcol" style="">Graded</td>
+</tr>
+<tr class="">
+<th class="cell c0" style="" scope="row">Grading criteria</th>
+<td class="cell c1 lastcol" style=""><div class="box py-3 gradingform_rubric-description"></div><div id="rubric-rubric" class="clearfix gradingform_rubric editor preview"><table class="criteria" id="rubric-criteria" aria-label="Rubric"><tr class="criterion first even" id="rubric-criteria-10461"><td class="description" id="rubric-criteria-10461-description-cell" tabindex="0" aria-label="Criterion Specifications: 
+All requirements in the specification are completed.">Specifications: 
+All requirements in the specification are completed.</td><td class="levels"><table id="rubric-criteria-10461-levels-table" aria-label="Levels group"><tr id="rubric-criteria-10461-levels"><td id="rubric-criteria-10461-levels-32193" class="text-break level first even" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 20 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10461-levels-32193-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric-criteria-10461-levels-32193-score" class="scorevalue">20</span> points</div></div></td><td id="rubric-criteria-10461-levels-32192" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 10 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10461-levels-32192-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric-criteria-10461-levels-32192-score" class="scorevalue">10</span> points</div></div></td><td id="rubric-criteria-10461-levels-32191" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10461-levels-32191-definition-container">No Credit</div><div class="score d-inline"><span id="rubric-criteria-10461-levels-32191-score" class="scorevalue">0</span> points</div></div></td></tr></table></td></tr><tr class="criterion odd" id="rubric-criteria-10460"><td class="description" id="rubric-criteria-10460-description-cell" tabindex="0" aria-label="Criterion Code Style: 
+All code is written and formatted to make it easy for another developer to read, including appropriate indents, object names, and comments.">Code Style: 
+All code is written and formatted to make it easy for another developer to read, including appropriate indents, object names, and comments.</td><td class="levels"><table id="rubric-criteria-10460-levels-table" aria-label="Levels group"><tr id="rubric-criteria-10460-levels"><td id="rubric-criteria-10460-levels-32190" class="text-break level first even" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 10 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10460-levels-32190-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric-criteria-10460-levels-32190-score" class="scorevalue">10</span> points</div></div></td><td id="rubric-criteria-10460-levels-32189" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 5 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10460-levels-32189-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric-criteria-10460-levels-32189-score" class="scorevalue">5</span> points</div></div></td><td id="rubric-criteria-10460-levels-32188" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10460-levels-32188-definition-container">No Credit</div><div class="score d-inline"><span id="rubric-criteria-10460-levels-32188-score" class="scorevalue">0</span> points</div></div></td></tr></table></td></tr><tr class="criterion even" id="rubric-criteria-10459"><td class="description" id="rubric-criteria-10459-description-cell" tabindex="0" aria-label="Criterion DI and MVC: 
+The application submitted works properly using dependency injection and the MVC pattern as shown in the unit.">DI and MVC: 
+The application submitted works properly using dependency injection and the MVC pattern as shown in the unit.</td><td class="levels"><table id="rubric-criteria-10459-levels-table" aria-label="Levels group"><tr id="rubric-criteria-10459-levels"><td id="rubric-criteria-10459-levels-32187" class="text-break level first even" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10459-levels-32187-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric-criteria-10459-levels-32187-score" class="scorevalue">5</span> points</div></div></td><td id="rubric-criteria-10459-levels-32186" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10459-levels-32186-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric-criteria-10459-levels-32186-score" class="scorevalue">3</span> points</div></div></td><td id="rubric-criteria-10459-levels-32185" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10459-levels-32185-definition-container">No Credit</div><div class="score d-inline"><span id="rubric-criteria-10459-levels-32185-score" class="scorevalue">0</span> points</div></div></td></tr></table></td></tr><tr class="criterion odd" id="rubric-criteria-10458"><td class="description" id="rubric-criteria-10458-description-cell" tabindex="0" aria-label="Criterion I/O Operations: 
+The application is able to perform I/O operations to a file to store and retrieve item information.">I/O Operations: 
+The application is able to perform I/O operations to a file to store and retrieve item information.</td><td class="levels"><table id="rubric-criteria-10458-levels-table" aria-label="Levels group"><tr id="rubric-criteria-10458-levels"><td id="rubric-criteria-10458-levels-32184" class="text-break level first even" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 10 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10458-levels-32184-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric-criteria-10458-levels-32184-score" class="scorevalue">10</span> points</div></div></td><td id="rubric-criteria-10458-levels-32183" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 5 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10458-levels-32183-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric-criteria-10458-levels-32183-score" class="scorevalue">5</span> points</div></div></td><td id="rubric-criteria-10458-levels-32182" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10458-levels-32182-definition-container">No Credit</div><div class="score d-inline"><span id="rubric-criteria-10458-levels-32182-score" class="scorevalue">0</span> points</div></div></td></tr></table></td></tr><tr class="criterion even" id="rubric-criteria-10457"><td class="description" id="rubric-criteria-10457-description-cell" tabindex="0" aria-label="Criterion Data Types: 
+The application uses the proper data types for all variables and correctly converts between data types when necessary.">Data Types: 
+The application uses the proper data types for all variables and correctly converts between data types when necessary.</td><td class="levels"><table id="rubric-criteria-10457-levels-table" aria-label="Levels group"><tr id="rubric-criteria-10457-levels"><td id="rubric-criteria-10457-levels-32181" class="text-break level first even" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10457-levels-32181-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric-criteria-10457-levels-32181-score" class="scorevalue">5</span> points</div></div></td><td id="rubric-criteria-10457-levels-32180" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10457-levels-32180-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric-criteria-10457-levels-32180-score" class="scorevalue">3</span> points</div></div></td><td id="rubric-criteria-10457-levels-32179" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10457-levels-32179-definition-container">No Credit</div><div class="score d-inline"><span id="rubric-criteria-10457-levels-32179-score" class="scorevalue">0</span> points</div></div></td></tr></table></td></tr><tr class="criterion odd" id="rubric-criteria-10456"><td class="description" id="rubric-criteria-10456-description-cell" tabindex="0" aria-label="Criterion Service Layer: 
+The application has a Service Layer that contains business logic.">Service Layer: 
+The application has a Service Layer that contains business logic.</td><td class="levels"><table id="rubric-criteria-10456-levels-table" aria-label="Levels group"><tr id="rubric-criteria-10456-levels"><td id="rubric-criteria-10456-levels-32178" class="text-break level first even" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10456-levels-32178-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric-criteria-10456-levels-32178-score" class="scorevalue">5</span> points</div></div></td><td id="rubric-criteria-10456-levels-32177" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10456-levels-32177-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric-criteria-10456-levels-32177-score" class="scorevalue">3</span> points</div></div></td><td id="rubric-criteria-10456-levels-32176" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10456-levels-32176-definition-container">No Credit</div><div class="score d-inline"><span id="rubric-criteria-10456-levels-32176-score" class="scorevalue">0</span> points</div></div></td></tr></table></td></tr><tr class="criterion even" id="rubric-criteria-10455"><td class="description" id="rubric-criteria-10455-description-cell" tabindex="0" aria-label="Criterion Lambdas and Streams: 
+The application uses lambdas and streams in at least part of the DAO.">Lambdas and Streams: 
+The application uses lambdas and streams in at least part of the DAO.</td><td class="levels"><table id="rubric-criteria-10455-levels-table" aria-label="Levels group"><tr id="rubric-criteria-10455-levels"><td id="rubric-criteria-10455-levels-32175" class="text-break level first even" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10455-levels-32175-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric-criteria-10455-levels-32175-score" class="scorevalue">5</span> points</div></div></td><td id="rubric-criteria-10455-levels-32174" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10455-levels-32174-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric-criteria-10455-levels-32174-score" class="scorevalue">3</span> points</div></div></td><td id="rubric-criteria-10455-levels-32173" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10455-levels-32173-definition-container">No Credit</div><div class="score d-inline"><span id="rubric-criteria-10455-levels-32173-score" class="scorevalue">0</span> points</div></div></td></tr></table></td></tr><tr class="criterion odd" id="rubric-criteria-10454"><td class="description" id="rubric-criteria-10454-description-cell" tabindex="0" aria-label="Criterion Unit Tests: 
+Application has full set of unit tests for DAO(s) and the Service Layer.">Unit Tests: 
+Application has full set of unit tests for DAO(s) and the Service Layer.</td><td class="levels"><table id="rubric-criteria-10454-levels-table" aria-label="Levels group"><tr id="rubric-criteria-10454-levels"><td id="rubric-criteria-10454-levels-32172" class="text-break level first even" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10454-levels-32172-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric-criteria-10454-levels-32172-score" class="scorevalue">5</span> points</div></div></td><td id="rubric-criteria-10454-levels-32171" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10454-levels-32171-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric-criteria-10454-levels-32171-score" class="scorevalue">3</span> points</div></div></td><td id="rubric-criteria-10454-levels-32170" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10454-levels-32170-definition-container">No Credit</div><div class="score d-inline"><span id="rubric-criteria-10454-levels-32170-score" class="scorevalue">0</span> points</div></div></td></tr></table></td></tr><tr class="criterion even" id="rubric-criteria-10453"><td class="description" id="rubric-criteria-10453-description-cell" tabindex="0" aria-label="Criterion Data Storage: 
+Application uses a List or Map to store DAO data in memory.">Data Storage: 
+Application uses a List or Map to store DAO data in memory.</td><td class="levels"><table id="rubric-criteria-10453-levels-table" aria-label="Levels group"><tr id="rubric-criteria-10453-levels"><td id="rubric-criteria-10453-levels-32169" class="text-break level first even" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10453-levels-32169-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric-criteria-10453-levels-32169-score" class="scorevalue">5</span> points</div></div></td><td id="rubric-criteria-10453-levels-32168" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10453-levels-32168-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric-criteria-10453-levels-32168-score" class="scorevalue">3</span> points</div></div></td><td id="rubric-criteria-10453-levels-32167" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10453-levels-32167-definition-container">No Credit</div><div class="score d-inline"><span id="rubric-criteria-10453-levels-32167-score" class="scorevalue">0</span> points</div></div></td></tr></table></td></tr><tr class="criterion odd" id="rubric-criteria-10452"><td class="description" id="rubric-criteria-10452-description-cell" tabindex="0" aria-label="Criterion Input Validation: 
+Application validates user input.
+">Input Validation: 
+Application validates user input.
+</td><td class="levels"><table id="rubric-criteria-10452-levels-table" aria-label="Levels group"><tr id="rubric-criteria-10452-levels"><td id="rubric-criteria-10452-levels-32166" class="text-break level first even" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10452-levels-32166-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric-criteria-10452-levels-32166-score" class="scorevalue">5</span> points</div></div></td><td id="rubric-criteria-10452-levels-32165" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10452-levels-32165-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric-criteria-10452-levels-32165-score" class="scorevalue">3</span> points</div></div></td><td id="rubric-criteria-10452-levels-32164" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10452-levels-32164-definition-container">No Credit</div><div class="score d-inline"><span id="rubric-criteria-10452-levels-32164-score" class="scorevalue">0</span> points</div></div></td></tr></table></td></tr><tr class="criterion even" id="rubric-criteria-10451"><td class="description" id="rubric-criteria-10451-description-cell" tabindex="0" aria-label="Criterion Exception Handling: 
+Application properly handles all exceptions.">Exception Handling: 
+Application properly handles all exceptions.</td><td class="levels"><table id="rubric-criteria-10451-levels-table" aria-label="Levels group"><tr id="rubric-criteria-10451-levels"><td id="rubric-criteria-10451-levels-32163" class="text-break level first even" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10451-levels-32163-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric-criteria-10451-levels-32163-score" class="scorevalue">5</span> points</div></div></td><td id="rubric-criteria-10451-levels-32162" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10451-levels-32162-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric-criteria-10451-levels-32162-score" class="scorevalue">3</span> points</div></div></td><td id="rubric-criteria-10451-levels-32161" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level Click to edit level, 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10451-levels-32161-definition-container">Click to edit level</div><div class="score d-inline"><span id="rubric-criteria-10451-levels-32161-score" class="scorevalue">0</span> points</div></div></td></tr></table></td></tr><tr class="criterion odd" id="rubric-criteria-10450"><td class="description" id="rubric-criteria-10450-description-cell" tabindex="0" aria-label="Criterion Basic Concepts: 
+Apprentice can explain the foundational elements of the Java language, object-oriented design, and testing methodology.">Basic Concepts: 
+Apprentice can explain the foundational elements of the Java language, object-oriented design, and testing methodology.</td><td class="levels"><table id="rubric-criteria-10450-levels-table" aria-label="Levels group"><tr id="rubric-criteria-10450-levels"><td id="rubric-criteria-10450-levels-32160" class="text-break level first even" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10450-levels-32160-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric-criteria-10450-levels-32160-score" class="scorevalue">5</span> points</div></div></td><td id="rubric-criteria-10450-levels-32159" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10450-levels-32159-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric-criteria-10450-levels-32159-score" class="scorevalue">3</span> points</div></div></td><td id="rubric-criteria-10450-levels-32158" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10450-levels-32158-definition-container">No Credit</div><div class="score d-inline"><span id="rubric-criteria-10450-levels-32158-score" class="scorevalue">0</span> points</div></div></td></tr></table></td></tr><tr class="criterion even" id="rubric-criteria-10449"><td class="description" id="rubric-criteria-10449-description-cell" tabindex="0" aria-label="Criterion  Intermediate Concepts: 
+Apprentice can explain dependency injection, the advantages of loosely coupled code, and the MVC pattern."> Intermediate Concepts: 
+Apprentice can explain dependency injection, the advantages of loosely coupled code, and the MVC pattern.</td><td class="levels"><table id="rubric-criteria-10449-levels-table" aria-label="Levels group"><tr id="rubric-criteria-10449-levels"><td id="rubric-criteria-10449-levels-32157" class="text-break level first even" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10449-levels-32157-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric-criteria-10449-levels-32157-score" class="scorevalue">5</span> points</div></div></td><td id="rubric-criteria-10449-levels-32156" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10449-levels-32156-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric-criteria-10449-levels-32156-score" class="scorevalue">3</span> points</div></div></td><td id="rubric-criteria-10449-levels-32155" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10449-levels-32155-definition-container">No Credit</div><div class="score d-inline"><span id="rubric-criteria-10449-levels-32155-score" class="scorevalue">0</span> points</div></div></td></tr></table></td></tr><tr class="criterion last odd" id="rubric-criteria-10448"><td class="description" id="rubric-criteria-10448-description-cell" tabindex="0" aria-label="Criterion Application Architecture: 
+Apprentice can explain the importance of the Service Layer in application architecture.">Application Architecture: 
+Apprentice can explain the importance of the Service Layer in application architecture.</td><td class="levels"><table id="rubric-criteria-10448-levels-table" aria-label="Levels group"><tr id="rubric-criteria-10448-levels"><td id="rubric-criteria-10448-levels-32154" class="text-break level first even" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10448-levels-32154-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric-criteria-10448-levels-32154-score" class="scorevalue">5</span> points</div></div></td><td id="rubric-criteria-10448-levels-32153" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10448-levels-32153-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric-criteria-10448-levels-32153-score" class="scorevalue">3</span> points</div></div></td><td id="rubric-criteria-10448-levels-32152" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-10448-levels-32152-definition-container">No Credit</div><div class="score d-inline"><span id="rubric-criteria-10448-levels-32152-score" class="scorevalue">0</span> points</div></div></td></tr></table></td></tr></table></div></td>
+</tr>
+<tr class="">
+<th class="cell c0" style="" scope="row">Last modified</th>
+<td class="cell c1 lastcol" style="">-</td>
+</tr>
+<tr class="lastrow">
+<th class="cell c0" style="" scope="row">Submission comments</th>
+<td class="cell c1 lastcol" style=""><div class="box py-3 boxaligncenter plugincontentsummary summary_assignsubmission_comments_13909"><div class="commentscontainer"><div style="display:none" id="cmt-tmpl"><div class="comment-message"><div class="comment-message-meta mr-3"><span class="picture">___picture___</span><span class="user">___name___</span> - <span class="time">___time___</span></div><div class="text">___content___</div></div></div><div class="mdl-left"><a class="showcommentsnonjs" href="https://academy.engagelms.com/mod/assign/view.php?id=92189&amp;rownum=0&amp;useridlistid=6404eea1c2017266150497&amp;action&amp;nonjscomment=1&amp;comment_itemid=13909&amp;comment_context=182110&amp;comment_component=assignsubmission_comments&amp;comment_area=submission_comments">Show comments</a><a class="comment-link" id="comment-link-6404eea216cc5" href="#" role="button" aria-expanded="false"><i class="icon fa fa-caret-right fa-fw "  title="Comments" role="img" aria-label="Comments"></i><span id="comment-link-text-6404eea216cc5">Comments (0)</span></a><div id="comment-ctrl-6404eea216cc5" class="comment-ctrl"><ul id="comment-list-6404eea216cc5" class="comment-list"><li class="first"></li></ul><div id="comment-pagination-6404eea216cc5" class="comment-pagination"></div><div class="comment-area"><div class="db"><textarea name="content" rows="2" id="dlg-content-6404eea216cc5" aria-label="Add a comment..." cols="20"></textarea></div><div class="fd" id="comment-action-6404eea216cc5"><a id="comment-action-post-6404eea216cc5" href="#">Save comment</a><span> | </span><a id="comment-action-cancel-6404eea216cc5" href="#">Cancel</a></div></div><div class="clearer"></div></div></div></div></div></td>
+</tr>
+</tbody>
+</table>
+</div></div></div><div class="feedback"><h3>Feedback</h3><div class="box py-3 boxaligncenter feedbacktable"><div class="table-responsive"><table class="generaltable">
+<tbody><tr class="">
+<th class="cell c0" style="" scope="row">Grade</th>
+<td class="cell c1 lastcol" style=""><div class="advancedgrade"><div class="box py-3 gradingform_rubric-description"></div><div id="rubric-rubric0" class="clearfix gradingform_rubric view"><table class="criteria" id="rubric0-criteria" aria-label="Rubric"><tr class="criterion first even" id="rubric0-criteria-10461"><td class="description" id="rubric0-criteria-10461-description-cell" tabindex="0" aria-label="Criterion Specifications: 
+All requirements in the specification are completed.">Specifications: 
+All requirements in the specification are completed.</td><td class="levels"><table id="rubric0-criteria-10461-levels-table" aria-label="Levels group"><tr id="rubric0-criteria-10461-levels" role="radiogroup"><td id="rubric0-criteria-10461-levels-32193" class="text-break level first even checked" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 20 points." role="radio" aria-checked="true"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10461-levels-32193-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric0-criteria-10461-levels-32193-score" class="scorevalue">20</span> points</div></div></td><td id="rubric0-criteria-10461-levels-32192" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 10 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10461-levels-32192-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric0-criteria-10461-levels-32192-score" class="scorevalue">10</span> points</div></div></td><td id="rubric0-criteria-10461-levels-32191" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10461-levels-32191-definition-container">No Credit</div><div class="score d-inline"><span id="rubric0-criteria-10461-levels-32191-score" class="scorevalue">0</span> points</div></div></td></tr></table></td><td class="remark" tabindex="0" id="rubric0-criteria-10461-remark" aria-label="Remark for criterion Specifications: 
+All requirements in the specification are completed.: "></td></tr><tr class="criterion odd" id="rubric0-criteria-10460"><td class="description" id="rubric0-criteria-10460-description-cell" tabindex="0" aria-label="Criterion Code Style: 
+All code is written and formatted to make it easy for another developer to read, including appropriate indents, object names, and comments.">Code Style: 
+All code is written and formatted to make it easy for another developer to read, including appropriate indents, object names, and comments.</td><td class="levels"><table id="rubric0-criteria-10460-levels-table" aria-label="Levels group"><tr id="rubric0-criteria-10460-levels" role="radiogroup"><td id="rubric0-criteria-10460-levels-32190" class="text-break level first even checked" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 10 points." role="radio" aria-checked="true"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10460-levels-32190-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric0-criteria-10460-levels-32190-score" class="scorevalue">10</span> points</div></div></td><td id="rubric0-criteria-10460-levels-32189" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 5 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10460-levels-32189-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric0-criteria-10460-levels-32189-score" class="scorevalue">5</span> points</div></div></td><td id="rubric0-criteria-10460-levels-32188" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10460-levels-32188-definition-container">No Credit</div><div class="score d-inline"><span id="rubric0-criteria-10460-levels-32188-score" class="scorevalue">0</span> points</div></div></td></tr></table></td><td class="remark" tabindex="0" id="rubric0-criteria-10460-remark" aria-label="Remark for criterion Code Style: 
+All code is written and formatted to make it easy for another developer to read, including appropriate indents, object names, and comments.: "></td></tr><tr class="criterion even" id="rubric0-criteria-10459"><td class="description" id="rubric0-criteria-10459-description-cell" tabindex="0" aria-label="Criterion DI and MVC: 
+The application submitted works properly using dependency injection and the MVC pattern as shown in the unit.">DI and MVC: 
+The application submitted works properly using dependency injection and the MVC pattern as shown in the unit.</td><td class="levels"><table id="rubric0-criteria-10459-levels-table" aria-label="Levels group"><tr id="rubric0-criteria-10459-levels" role="radiogroup"><td id="rubric0-criteria-10459-levels-32187" class="text-break level first even checked" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points." role="radio" aria-checked="true"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10459-levels-32187-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric0-criteria-10459-levels-32187-score" class="scorevalue">5</span> points</div></div></td><td id="rubric0-criteria-10459-levels-32186" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10459-levels-32186-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric0-criteria-10459-levels-32186-score" class="scorevalue">3</span> points</div></div></td><td id="rubric0-criteria-10459-levels-32185" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10459-levels-32185-definition-container">No Credit</div><div class="score d-inline"><span id="rubric0-criteria-10459-levels-32185-score" class="scorevalue">0</span> points</div></div></td></tr></table></td><td class="remark" tabindex="0" id="rubric0-criteria-10459-remark" aria-label="Remark for criterion DI and MVC: 
+The application submitted works properly using dependency injection and the MVC pattern as shown in the unit.: "></td></tr><tr class="criterion odd" id="rubric0-criteria-10458"><td class="description" id="rubric0-criteria-10458-description-cell" tabindex="0" aria-label="Criterion I/O Operations: 
+The application is able to perform I/O operations to a file to store and retrieve item information.">I/O Operations: 
+The application is able to perform I/O operations to a file to store and retrieve item information.</td><td class="levels"><table id="rubric0-criteria-10458-levels-table" aria-label="Levels group"><tr id="rubric0-criteria-10458-levels" role="radiogroup"><td id="rubric0-criteria-10458-levels-32184" class="text-break level first even checked" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 10 points." role="radio" aria-checked="true"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10458-levels-32184-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric0-criteria-10458-levels-32184-score" class="scorevalue">10</span> points</div></div></td><td id="rubric0-criteria-10458-levels-32183" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 5 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10458-levels-32183-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric0-criteria-10458-levels-32183-score" class="scorevalue">5</span> points</div></div></td><td id="rubric0-criteria-10458-levels-32182" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10458-levels-32182-definition-container">No Credit</div><div class="score d-inline"><span id="rubric0-criteria-10458-levels-32182-score" class="scorevalue">0</span> points</div></div></td></tr></table></td><td class="remark" tabindex="0" id="rubric0-criteria-10458-remark" aria-label="Remark for criterion I/O Operations: 
+The application is able to perform I/O operations to a file to store and retrieve item information.: "></td></tr><tr class="criterion even" id="rubric0-criteria-10457"><td class="description" id="rubric0-criteria-10457-description-cell" tabindex="0" aria-label="Criterion Data Types: 
+The application uses the proper data types for all variables and correctly converts between data types when necessary.">Data Types: 
+The application uses the proper data types for all variables and correctly converts between data types when necessary.</td><td class="levels"><table id="rubric0-criteria-10457-levels-table" aria-label="Levels group"><tr id="rubric0-criteria-10457-levels" role="radiogroup"><td id="rubric0-criteria-10457-levels-32181" class="text-break level first even checked" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points." role="radio" aria-checked="true"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10457-levels-32181-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric0-criteria-10457-levels-32181-score" class="scorevalue">5</span> points</div></div></td><td id="rubric0-criteria-10457-levels-32180" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10457-levels-32180-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric0-criteria-10457-levels-32180-score" class="scorevalue">3</span> points</div></div></td><td id="rubric0-criteria-10457-levels-32179" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10457-levels-32179-definition-container">No Credit</div><div class="score d-inline"><span id="rubric0-criteria-10457-levels-32179-score" class="scorevalue">0</span> points</div></div></td></tr></table></td><td class="remark" tabindex="0" id="rubric0-criteria-10457-remark" aria-label="Remark for criterion Data Types: 
+The application uses the proper data types for all variables and correctly converts between data types when necessary.: "></td></tr><tr class="criterion odd" id="rubric0-criteria-10456"><td class="description" id="rubric0-criteria-10456-description-cell" tabindex="0" aria-label="Criterion Service Layer: 
+The application has a Service Layer that contains business logic.">Service Layer: 
+The application has a Service Layer that contains business logic.</td><td class="levels"><table id="rubric0-criteria-10456-levels-table" aria-label="Levels group"><tr id="rubric0-criteria-10456-levels" role="radiogroup"><td id="rubric0-criteria-10456-levels-32178" class="text-break level first even checked" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points." role="radio" aria-checked="true"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10456-levels-32178-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric0-criteria-10456-levels-32178-score" class="scorevalue">5</span> points</div></div></td><td id="rubric0-criteria-10456-levels-32177" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10456-levels-32177-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric0-criteria-10456-levels-32177-score" class="scorevalue">3</span> points</div></div></td><td id="rubric0-criteria-10456-levels-32176" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10456-levels-32176-definition-container">No Credit</div><div class="score d-inline"><span id="rubric0-criteria-10456-levels-32176-score" class="scorevalue">0</span> points</div></div></td></tr></table></td><td class="remark" tabindex="0" id="rubric0-criteria-10456-remark" aria-label="Remark for criterion Service Layer: 
+The application has a Service Layer that contains business logic.: "></td></tr><tr class="criterion even" id="rubric0-criteria-10455"><td class="description" id="rubric0-criteria-10455-description-cell" tabindex="0" aria-label="Criterion Lambdas and Streams: 
+The application uses lambdas and streams in at least part of the DAO.">Lambdas and Streams: 
+The application uses lambdas and streams in at least part of the DAO.</td><td class="levels"><table id="rubric0-criteria-10455-levels-table" aria-label="Levels group"><tr id="rubric0-criteria-10455-levels" role="radiogroup"><td id="rubric0-criteria-10455-levels-32175" class="text-break level first even checked" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points." role="radio" aria-checked="true"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10455-levels-32175-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric0-criteria-10455-levels-32175-score" class="scorevalue">5</span> points</div></div></td><td id="rubric0-criteria-10455-levels-32174" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10455-levels-32174-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric0-criteria-10455-levels-32174-score" class="scorevalue">3</span> points</div></div></td><td id="rubric0-criteria-10455-levels-32173" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10455-levels-32173-definition-container">No Credit</div><div class="score d-inline"><span id="rubric0-criteria-10455-levels-32173-score" class="scorevalue">0</span> points</div></div></td></tr></table></td><td class="remark" tabindex="0" id="rubric0-criteria-10455-remark" aria-label="Remark for criterion Lambdas and Streams: 
+The application uses lambdas and streams in at least part of the DAO.: "></td></tr><tr class="criterion odd" id="rubric0-criteria-10454"><td class="description" id="rubric0-criteria-10454-description-cell" tabindex="0" aria-label="Criterion Unit Tests: 
+Application has full set of unit tests for DAO(s) and the Service Layer.">Unit Tests: 
+Application has full set of unit tests for DAO(s) and the Service Layer.</td><td class="levels"><table id="rubric0-criteria-10454-levels-table" aria-label="Levels group"><tr id="rubric0-criteria-10454-levels" role="radiogroup"><td id="rubric0-criteria-10454-levels-32172" class="text-break level first even checked" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points." role="radio" aria-checked="true"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10454-levels-32172-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric0-criteria-10454-levels-32172-score" class="scorevalue">5</span> points</div></div></td><td id="rubric0-criteria-10454-levels-32171" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10454-levels-32171-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric0-criteria-10454-levels-32171-score" class="scorevalue">3</span> points</div></div></td><td id="rubric0-criteria-10454-levels-32170" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10454-levels-32170-definition-container">No Credit</div><div class="score d-inline"><span id="rubric0-criteria-10454-levels-32170-score" class="scorevalue">0</span> points</div></div></td></tr></table></td><td class="remark" tabindex="0" id="rubric0-criteria-10454-remark" aria-label="Remark for criterion Unit Tests: 
+Application has full set of unit tests for DAO(s) and the Service Layer.: "></td></tr><tr class="criterion even" id="rubric0-criteria-10453"><td class="description" id="rubric0-criteria-10453-description-cell" tabindex="0" aria-label="Criterion Data Storage: 
+Application uses a List or Map to store DAO data in memory.">Data Storage: 
+Application uses a List or Map to store DAO data in memory.</td><td class="levels"><table id="rubric0-criteria-10453-levels-table" aria-label="Levels group"><tr id="rubric0-criteria-10453-levels" role="radiogroup"><td id="rubric0-criteria-10453-levels-32169" class="text-break level first even checked" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points." role="radio" aria-checked="true"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10453-levels-32169-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric0-criteria-10453-levels-32169-score" class="scorevalue">5</span> points</div></div></td><td id="rubric0-criteria-10453-levels-32168" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10453-levels-32168-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric0-criteria-10453-levels-32168-score" class="scorevalue">3</span> points</div></div></td><td id="rubric0-criteria-10453-levels-32167" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10453-levels-32167-definition-container">No Credit</div><div class="score d-inline"><span id="rubric0-criteria-10453-levels-32167-score" class="scorevalue">0</span> points</div></div></td></tr></table></td><td class="remark" tabindex="0" id="rubric0-criteria-10453-remark" aria-label="Remark for criterion Data Storage: 
+Application uses a List or Map to store DAO data in memory.: "></td></tr><tr class="criterion odd" id="rubric0-criteria-10452"><td class="description" id="rubric0-criteria-10452-description-cell" tabindex="0" aria-label="Criterion Input Validation: 
+Application validates user input.
+">Input Validation: 
+Application validates user input.
+</td><td class="levels"><table id="rubric0-criteria-10452-levels-table" aria-label="Levels group"><tr id="rubric0-criteria-10452-levels" role="radiogroup"><td id="rubric0-criteria-10452-levels-32166" class="text-break level first even checked" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points." role="radio" aria-checked="true"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10452-levels-32166-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric0-criteria-10452-levels-32166-score" class="scorevalue">5</span> points</div></div></td><td id="rubric0-criteria-10452-levels-32165" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10452-levels-32165-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric0-criteria-10452-levels-32165-score" class="scorevalue">3</span> points</div></div></td><td id="rubric0-criteria-10452-levels-32164" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10452-levels-32164-definition-container">No Credit</div><div class="score d-inline"><span id="rubric0-criteria-10452-levels-32164-score" class="scorevalue">0</span> points</div></div></td></tr></table></td><td class="remark" tabindex="0" id="rubric0-criteria-10452-remark" aria-label="Remark for criterion Input Validation: 
+Application validates user input.
+: "></td></tr><tr class="criterion even" id="rubric0-criteria-10451"><td class="description" id="rubric0-criteria-10451-description-cell" tabindex="0" aria-label="Criterion Exception Handling: 
+Application properly handles all exceptions.">Exception Handling: 
+Application properly handles all exceptions.</td><td class="levels"><table id="rubric0-criteria-10451-levels-table" aria-label="Levels group"><tr id="rubric0-criteria-10451-levels" role="radiogroup"><td id="rubric0-criteria-10451-levels-32163" class="text-break level first even checked" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points." role="radio" aria-checked="true"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10451-levels-32163-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric0-criteria-10451-levels-32163-score" class="scorevalue">5</span> points</div></div></td><td id="rubric0-criteria-10451-levels-32162" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10451-levels-32162-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric0-criteria-10451-levels-32162-score" class="scorevalue">3</span> points</div></div></td><td id="rubric0-criteria-10451-levels-32161" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level Click to edit level, 0 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10451-levels-32161-definition-container">Click to edit level</div><div class="score d-inline"><span id="rubric0-criteria-10451-levels-32161-score" class="scorevalue">0</span> points</div></div></td></tr></table></td><td class="remark" tabindex="0" id="rubric0-criteria-10451-remark" aria-label="Remark for criterion Exception Handling: 
+Application properly handles all exceptions.: "></td></tr><tr class="criterion odd" id="rubric0-criteria-10450"><td class="description" id="rubric0-criteria-10450-description-cell" tabindex="0" aria-label="Criterion Basic Concepts: 
+Apprentice can explain the foundational elements of the Java language, object-oriented design, and testing methodology.">Basic Concepts: 
+Apprentice can explain the foundational elements of the Java language, object-oriented design, and testing methodology.</td><td class="levels"><table id="rubric0-criteria-10450-levels-table" aria-label="Levels group"><tr id="rubric0-criteria-10450-levels" role="radiogroup"><td id="rubric0-criteria-10450-levels-32160" class="text-break level first even checked" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points." role="radio" aria-checked="true"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10450-levels-32160-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric0-criteria-10450-levels-32160-score" class="scorevalue">5</span> points</div></div></td><td id="rubric0-criteria-10450-levels-32159" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10450-levels-32159-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric0-criteria-10450-levels-32159-score" class="scorevalue">3</span> points</div></div></td><td id="rubric0-criteria-10450-levels-32158" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10450-levels-32158-definition-container">No Credit</div><div class="score d-inline"><span id="rubric0-criteria-10450-levels-32158-score" class="scorevalue">0</span> points</div></div></td></tr></table></td><td class="remark" tabindex="0" id="rubric0-criteria-10450-remark" aria-label="Remark for criterion Basic Concepts: 
+Apprentice can explain the foundational elements of the Java language, object-oriented design, and testing methodology.: "></td></tr><tr class="criterion even" id="rubric0-criteria-10449"><td class="description" id="rubric0-criteria-10449-description-cell" tabindex="0" aria-label="Criterion  Intermediate Concepts: 
+Apprentice can explain dependency injection, the advantages of loosely coupled code, and the MVC pattern."> Intermediate Concepts: 
+Apprentice can explain dependency injection, the advantages of loosely coupled code, and the MVC pattern.</td><td class="levels"><table id="rubric0-criteria-10449-levels-table" aria-label="Levels group"><tr id="rubric0-criteria-10449-levels" role="radiogroup"><td id="rubric0-criteria-10449-levels-32157" class="text-break level first even checked" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points." role="radio" aria-checked="true"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10449-levels-32157-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric0-criteria-10449-levels-32157-score" class="scorevalue">5</span> points</div></div></td><td id="rubric0-criteria-10449-levels-32156" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10449-levels-32156-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric0-criteria-10449-levels-32156-score" class="scorevalue">3</span> points</div></div></td><td id="rubric0-criteria-10449-levels-32155" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10449-levels-32155-definition-container">No Credit</div><div class="score d-inline"><span id="rubric0-criteria-10449-levels-32155-score" class="scorevalue">0</span> points</div></div></td></tr></table></td><td class="remark" tabindex="0" id="rubric0-criteria-10449-remark" aria-label="Remark for criterion  Intermediate Concepts: 
+Apprentice can explain dependency injection, the advantages of loosely coupled code, and the MVC pattern.: "></td></tr><tr class="criterion last odd" id="rubric0-criteria-10448"><td class="description" id="rubric0-criteria-10448-description-cell" tabindex="0" aria-label="Criterion Application Architecture: 
+Apprentice can explain the importance of the Service Layer in application architecture.">Application Architecture: 
+Apprentice can explain the importance of the Service Layer in application architecture.</td><td class="levels"><table id="rubric0-criteria-10448-levels-table" aria-label="Levels group"><tr id="rubric0-criteria-10448-levels" role="radiogroup"><td id="rubric0-criteria-10448-levels-32154" class="text-break level first even checked" style="width: 33%;" tabindex="0" aria-label="Level Meets Expectations, 5 points." role="radio" aria-checked="true"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10448-levels-32154-definition-container">Meets Expectations</div><div class="score d-inline"><span id="rubric0-criteria-10448-levels-32154-score" class="scorevalue">5</span> points</div></div></td><td id="rubric0-criteria-10448-levels-32153" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Needs Improvement, 3 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10448-levels-32153-definition-container">Needs Improvement</div><div class="score d-inline"><span id="rubric0-criteria-10448-levels-32153-score" class="scorevalue">3</span> points</div></div></td><td id="rubric0-criteria-10448-levels-32152" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No Credit, 0 points." role="radio" aria-checked="false"><div class="level-wrapper"><div class="definition" id="rubric0-criteria-10448-levels-32152-definition-container">No Credit</div><div class="score d-inline"><span id="rubric0-criteria-10448-levels-32152-score" class="scorevalue">0</span> points</div></div></td></tr></table></td><td class="remark" tabindex="0" id="rubric0-criteria-10448-remark" aria-label="Remark for criterion Application Architecture: 
+Apprentice can explain the importance of the Service Layer in application architecture.: "></td></tr></table></div></div>100.00 / 100.00</td>
+</tr>
+<tr class="">
+<th class="cell c0" style="" scope="row">Graded on</th>
+<td class="cell c1 lastcol" style="">Monday, 18 July 2022, 10:58 AM</td>
+</tr>
+<tr class="lastrow">
+<th class="cell c0" style="" scope="row">Graded by</th>
+<td class="cell c1 lastcol" style=""><a href="https://academy.engagelms.com/user/view.php?id=303&amp;course=696" class="d-inline-block aabtn"><span class="userinitials size-35">SA</span></a><img class="icon spacer" width="30" height="1" alt="" aria-hidden="true" src="https://academy.engagelms.com/theme/image.php/engage/core/1677568962/spacer" />Shams AL Ajrawi</td>
+</tr>
+</tbody>
+</table>
+</div></div></div></div>
+                        <div class="mt-5 mb-1 activity-navigation container-fluid">
+<div class="row">
+    <div class="col-md-4">        <div class="float-left">
+                <a href="https://academy.engagelms.com/mod/lti/view.php?id=92188&forceview=1" id="prev-activity-link" class="btn btn-link" >◄ Previous activity</a>
+
+        </div>
+</div>
+    <div class="col-md-4">        <div class="mdl-align">
+            <div class="urlselect">
+    <form method="post" action="https://academy.engagelms.com/course/jumpto.php" class="form-inline" id="url_select_f6404eea1cc95c7">
+        <input type="hidden" name="sesskey" value="9rHxJMqoJK">
+            <label for="jump-to-activity" class="sr-only">
+                Jump to...
+            </label>
+        <select  id="jump-to-activity" class="custom-select urlselect" name="jump"
+                 >
+                    <option value="" selected>Jump to...</option>
+                    <option value="/mod/forum/view.php?id=92049&amp;forceview=1" >Announcements</option>
+                    <option value="/mod/attendance/view.php?id=92050&amp;forceview=1" >Attendance</option>
+                    <option value="/mod/lti/view.php?id=92051&amp;forceview=1" >Zoom Meetings</option>
+                    <option value="/mod/resource/view.php?id=92289&amp;forceview=1" >Course Outline</option>
+                    <option value="/mod/resource/view.php?id=92307&amp;forceview=1" >Financial Markets</option>
+                    <option value="/mod/quiz/view.php?id=92309&amp;forceview=1" >Quiz: Financial Markets</option>
+                    <option value="/mod/resource/view.php?id=92310&amp;forceview=1" >Equity Trading</option>
+                    <option value="/mod/quiz/view.php?id=92312&amp;forceview=1" >Quiz: Equity Trading</option>
+                    <option value="/mod/resource/view.php?id=92315&amp;forceview=1" >Fixed Income</option>
+                    <option value="/mod/quiz/view.php?id=92317&amp;forceview=1" >Quiz: Fixed Income</option>
+                    <option value="/mod/resource/view.php?id=92318&amp;forceview=1" >Derivatives</option>
+                    <option value="/mod/quiz/view.php?id=92320&amp;forceview=1" >Quiz: Derivatives</option>
+                    <option value="/mod/resource/view.php?id=92321&amp;forceview=1" >Currency and Foreign Exchange</option>
+                    <option value="/mod/resource/view.php?id=92323&amp;forceview=1" >Treasury</option>
+                    <option value="/mod/quiz/view.php?id=92325&amp;forceview=1" >Quiz: Currency and Treasury</option>
+                    <option value="/mod/resource/view.php?id=92326&amp;forceview=1" >Regulation and Risk</option>
+                    <option value="/mod/quiz/view.php?id=92328&amp;forceview=1" >Quiz: Regulation and Risk</option>
+                    <option value="/mod/page/view.php?id=92055&amp;forceview=1" >Code Submission Checklist</option>
+                    <option value="/mod/page/view.php?id=92056&amp;forceview=1" >Java OOP Study List</option>
+                    <option value="/mod/page/view.php?id=92057&amp;forceview=1" >Java DDWA Study List</option>
+                    <option value="/mod/page/view.php?id=92058&amp;forceview=1" >Spring MVC Concepts Study List</option>
+                    <option value="/mod/page/view.php?id=92059&amp;forceview=1" >Git and GitHub</option>
+                    <option value="/mod/page/view.php?id=92060&amp;forceview=1" >What is Git?</option>
+                    <option value="/mod/page/view.php?id=92061&amp;forceview=1" >Installing Git</option>
+                    <option value="/mod/page/view.php?id=92062&amp;forceview=1" >Basic Git Commands</option>
+                    <option value="/mod/page/view.php?id=92063&amp;forceview=1" >GitHub Classroom</option>
+                    <option value="/mod/page/view.php?id=92064&amp;forceview=1" >Summative Assessments and Code Reviews</option>
+                    <option value="/mod/page/view.php?id=92065&amp;forceview=1" >Overview: Object-Oriented Programming</option>
+                    <option value="/mod/page/view.php?id=92066&amp;forceview=1" >Java Basics</option>
+                    <option value="/mod/page/view.php?id=92067&amp;forceview=1" >The Life Cycle of a Java Program</option>
+                    <option value="/mod/page/view.php?id=92068&amp;forceview=1" >Java Components: JVM, JRE, and JDK</option>
+                    <option value="/mod/page/view.php?id=92069&amp;forceview=1" >Install a JDK: OpenJDK 11</option>
+                    <option value="/mod/page/view.php?id=92070&amp;forceview=1" >Code-Along: Your First Hello World</option>
+                    <option value="/mod/quiz/view.php?id=92071&amp;forceview=1" >Quiz: Java Installation</option>
+                    <option value="/mod/page/view.php?id=92072&amp;forceview=1" >Apache NetBeans 12 Setup Instructions</option>
+                    <option value="/mod/page/view.php?id=92073&amp;forceview=1" >Code-Along: NetBeans Hello World!</option>
+                    <option value="/mod/page/view.php?id=92074&amp;forceview=1" >Code-Along: Debugging in NetBeans</option>
+                    <option value="/mod/quiz/view.php?id=92075&amp;forceview=1" >Quiz: IDEs</option>
+                    <option value="/mod/page/view.php?id=92076&amp;forceview=1" >Programs, Statements, and Variables</option>
+                    <option value="/mod/page/view.php?id=92077&amp;forceview=1" >Collecting Console Input - Scanner</option>
+                    <option value="/mod/page/view.php?id=92078&amp;forceview=1" >Code-Along: Window Master</option>
+                    <option value="/mod/page/view.php?id=92079&amp;forceview=1" >Debugging</option>
+                    <option value="/mod/page/view.php?id=92080&amp;forceview=1" >Exercise: Practice Programming #1 - Basics</option>
+                    <option value="/mod/page/view.php?id=92081&amp;forceview=1" >Exercise: Practice Programming #2 - Variables</option>
+                    <option value="/mod/page/view.php?id=92082&amp;forceview=1" >Exercise: Practice Programming #3 - Scanner</option>
+                    <option value="/mod/quiz/view.php?id=92083&amp;forceview=1" >Quiz: Debugging</option>
+                    <option value="/mod/quiz/view.php?id=92084&amp;forceview=1" >Quiz: Variables and Type</option>
+                    <option value="/mod/page/view.php?id=92085&amp;forceview=1" >Boolean Expressions and Controlling Program Flow</option>
+                    <option value="/mod/page/view.php?id=92086&amp;forceview=1" >Flowcharts</option>
+                    <option value="/mod/page/view.php?id=92087&amp;forceview=1" >Random</option>
+                    <option value="/mod/page/view.php?id=92088&amp;forceview=1" >Exercise: Practice Programming #4 - If/Else</option>
+                    <option value="/mod/page/view.php?id=92089&amp;forceview=1" >Exercise: Practice Programming #5 - Random</option>
+                    <option value="/mod/page/view.php?id=92090&amp;forceview=1" >Exercise: Practice Programming #6 - Whiles &amp; Dos</option>
+                    <option value="/mod/page/view.php?id=92091&amp;forceview=1" >Exercise: Practice Programming #7 - Fors</option>
+                    <option value="/mod/quiz/view.php?id=92092&amp;forceview=1" >Quiz: Boolean Expressions and Flow of Control</option>
+                    <option value="/mod/page/view.php?id=92093&amp;forceview=1" >Methods</option>
+                    <option value="/mod/page/view.php?id=92094&amp;forceview=1" >Exercise: Practice Programming #8 - Methods</option>
+                    <option value="/mod/quiz/view.php?id=92095&amp;forceview=1" >Quiz: Methods</option>
+                    <option value="/mod/page/view.php?id=92096&amp;forceview=1" >Arrays</option>
+                    <option value="/mod/page/view.php?id=92097&amp;forceview=1" >Exercise: Practice Programming #9 - Arrays</option>
+                    <option value="/mod/quiz/view.php?id=92098&amp;forceview=1" >Quiz: Arrays</option>
+                    <option value="/mod/page/view.php?id=92099&amp;forceview=1" >Exercise: Factorizer</option>
+                    <option value="/mod/page/view.php?id=92100&amp;forceview=1" >Exercise: Interest Calculator</option>
+                    <option value="/mod/page/view.php?id=92101&amp;forceview=1" >Exercise: Lucky Sevens</option>
+                    <option value="/mod/page/view.php?id=92102&amp;forceview=1" >Java Basics: Cumulative Exercises</option>
+                    <option value="/mod/assign/view.php?id=92103&amp;forceview=1" >Assessment: Basic Programming Concepts</option>
+                    <option value="/mod/quiz/view.php?id=92104&amp;forceview=1" >Summative Quiz: Java Basics</option>
+                    <option value="/mod/lti/view.php?id=92105&amp;forceview=1" >MidPoint Assessment: Git, Git Hub, and JAVA Basics</option>
+                    <option value="/mod/page/view.php?id=92106&amp;forceview=1" >Classes and Objects Overview</option>
+                    <option value="/mod/page/view.php?id=92107&amp;forceview=1" >Object-Oriented Concepts</option>
+                    <option value="/mod/quiz/view.php?id=92108&amp;forceview=1" >Quiz: Object-Oriented Concepts</option>
+                    <option value="/mod/page/view.php?id=92109&amp;forceview=1" >Classes, Objects, and Creating New Types</option>
+                    <option value="/mod/page/view.php?id=92110&amp;forceview=1" >Exercise: Class Modeling</option>
+                    <option value="/mod/page/view.php?id=92111&amp;forceview=1" >Exercise: Refactor into Objects</option>
+                    <option value="/mod/page/view.php?id=92112&amp;forceview=1" >Exercise: Simple Calculator</option>
+                    <option value="/mod/quiz/view.php?id=92113&amp;forceview=1" >Quiz: Classes and Objects</option>
+                    <option value="/mod/page/view.php?id=92114&amp;forceview=1" >References, Storage, and Memory Management</option>
+                    <option value="/mod/quiz/view.php?id=92115&amp;forceview=1" >Quiz: Memory Management</option>
+                    <option value="/mod/page/view.php?id=92116&amp;forceview=1" >Interfaces, Composition, and Inheritance</option>
+                    <option value="/mod/page/view.php?id=92117&amp;forceview=1" >Interfaces</option>
+                    <option value="/mod/page/view.php?id=92118&amp;forceview=1" >Composition</option>
+                    <option value="/mod/page/view.php?id=92119&amp;forceview=1" >Inheritance</option>
+                    <option value="/mod/page/view.php?id=92120&amp;forceview=1" >Exercise: Shapes and Perimeters</option>
+                    <option value="/mod/quiz/view.php?id=92121&amp;forceview=1" >Quiz: Interfaces, Composition, and Inheritance</option>
+                    <option value="/mod/page/view.php?id=92122&amp;forceview=1" >Collections and Maps</option>
+                    <option value="/mod/page/view.php?id=92123&amp;forceview=1" >Lists</option>
+                    <option value="/mod/page/view.php?id=92124&amp;forceview=1" >Maps</option>
+                    <option value="/mod/page/view.php?id=92125&amp;forceview=1" >Exercise: State Capitals 1</option>
+                    <option value="/mod/page/view.php?id=92126&amp;forceview=1" >Exercise: UserIO Class Lab</option>
+                    <option value="/mod/quiz/view.php?id=92127&amp;forceview=1" >Quiz: Collections and Maps</option>
+                    <option value="/mod/page/view.php?id=92128&amp;forceview=1" >Data Marshaling and Unmarshaling</option>
+                    <option value="/mod/quiz/view.php?id=92129&amp;forceview=1" >Quiz: Data Marshaling and Unmarshaling</option>
+                    <option value="/mod/page/view.php?id=92130&amp;forceview=1" >Simple File I/O</option>
+                    <option value="/mod/page/view.php?id=92131&amp;forceview=1" >Exercise: State Capitals 2</option>
+                    <option value="/mod/page/view.php?id=92132&amp;forceview=1" >Exercise: State Capitals 3</option>
+                    <option value="/mod/quiz/view.php?id=92133&amp;forceview=1" >Quiz: Simple File I/O</option>
+                    <option value="/mod/page/view.php?id=92134&amp;forceview=1" >MVC and Tiered Application Design Concepts for CRUD Applications</option>
+                    <option value="/mod/quiz/view.php?id=92135&amp;forceview=1" >Quiz: Tiered Application Design and MVC</option>
+                    <option value="/mod/page/view.php?id=92136&amp;forceview=1" >Software Development Lifecycle (SDLC)</option>
+                    <option value="/mod/page/view.php?id=92137&amp;forceview=1" >Agile Approach Checklist for Console CRUD Applications</option>
+                    <option value="/mod/quiz/view.php?id=92138&amp;forceview=1" >Quiz: SDLC</option>
+                    <option value="/mod/page/view.php?id=92139&amp;forceview=1" >Dependency Injection</option>
+                    <option value="/mod/page/view.php?id=92140&amp;forceview=1" >Exceptions</option>
+                    <option value="/mod/book/view.php?id=92141&amp;forceview=1" >Code Along: Class Roster</option>
+                    <option value="/mod/page/view.php?id=92142&amp;forceview=1" >Exercise: Student Quiz Scores</option>
+                    <option value="/mod/page/view.php?id=92143&amp;forceview=1" >Exercise: Address Book</option>
+                    <option value="/mod/page/view.php?id=92144&amp;forceview=1" >Summative Exercise: DVD Library</option>
+                    <option value="/mod/assign/view.php?id=92145&amp;forceview=1" >Assessment: DVD Library</option>
+                    <option value="/mod/quiz/view.php?id=92146&amp;forceview=1" >Summative Quiz: Classes and Objects</option>
+                    <option value="/mod/page/view.php?id=92147&amp;forceview=1" >Intermediate Java Overview</option>
+                    <option value="/mod/page/view.php?id=92148&amp;forceview=1" >The Service Layer</option>
+                    <option value="/mod/book/view.php?id=92149&amp;forceview=1" >Code-Along: Class Roster Service Layer</option>
+                    <option value="/mod/quiz/view.php?id=92150&amp;forceview=1" >Quiz: Service Layer</option>
+                    <option value="/mod/page/view.php?id=92151&amp;forceview=1" >Introduction to Unit Testing and JUnit</option>
+                    <option value="/mod/page/view.php?id=92152&amp;forceview=1" >Stateless Unit Testing</option>
+                    <option value="/mod/page/view.php?id=92153&amp;forceview=1" >Exercise: Functional Unit Tests</option>
+                    <option value="/mod/page/view.php?id=92154&amp;forceview=1" >Stateful Unit Testing &amp; ClassRoster DAO</option>
+                    <option value="/mod/page/view.php?id=92155&amp;forceview=1" >Unit Testing the Service Layer</option>
+                    <option value="/mod/page/view.php?id=92156&amp;forceview=1" >Exercise: Address Book Unit Tests</option>
+                    <option value="/mod/page/view.php?id=92157&amp;forceview=1" >Exercise: DVD Library Unit Tests</option>
+                    <option value="/mod/quiz/view.php?id=92158&amp;forceview=1" >Quiz: Unit Testing</option>
+                    <option value="/mod/page/view.php?id=92159&amp;forceview=1" >Enums</option>
+                    <option value="/mod/page/view.php?id=92160&amp;forceview=1" >Exercise: Enums</option>
+                    <option value="/mod/page/view.php?id=92161&amp;forceview=1" >Exercise: Monstrous DAO Testing</option>
+                    <option value="/mod/page/view.php?id=92162&amp;forceview=1" >Java DateTime API</option>
+                    <option value="/mod/page/view.php?id=92163&amp;forceview=1" >Exercise: BirthDAY Calculator</option>
+                    <option value="/mod/page/view.php?id=92164&amp;forceview=1" >Exercise: DVD Library LocalDate</option>
+                    <option value="/mod/quiz/view.php?id=92165&amp;forceview=1" >Quiz: Java DateTime API</option>
+                    <option value="/mod/page/view.php?id=92166&amp;forceview=1" >BigDecimal</option>
+                    <option value="/mod/page/view.php?id=92167&amp;forceview=1" >Exercise: Car Lot Service Layer</option>
+                    <option value="/mod/page/view.php?id=92168&amp;forceview=1" >Exercise: Interest Calculator BigDecimal</option>
+                    <option value="/mod/quiz/view.php?id=92169&amp;forceview=1" >Quiz: Big Decimal</option>
+                    <option value="/mod/page/view.php?id=92170&amp;forceview=1" >Lambdas and Streams</option>
+                    <option value="/mod/page/view.php?id=92171&amp;forceview=1" >Exercise: DVD Library Lambdas and Streams</option>
+                    <option value="/mod/quiz/view.php?id=92172&amp;forceview=1" >Quiz: Lambdas and Streams</option>
+                    <option value="/mod/assign/view.php?id=92173&amp;forceview=1" >Assessment: Vending Machine</option>
+                    <option value="/mod/quiz/view.php?id=92174&amp;forceview=1" >Summative Quiz: Intermediate Java</option>
+                    <option value="/mod/page/view.php?id=92175&amp;forceview=1" >Summative Exercise: Vending Machine</option>
+                    <option value="/mod/lti/view.php?id=92176&amp;forceview=1" >MidPoint Assessment: Classes and Objects, Intermediate JAVA</option>
+                    <option value="/mod/page/view.php?id=92177&amp;forceview=1" >Advanced Java Overview</option>
+                    <option value="/mod/page/view.php?id=92178&amp;forceview=1" >Spring Framework and Spring DI</option>
+                    <option value="/mod/page/view.php?id=92179&amp;forceview=1" >Code-Along: Spring DI in Action</option>
+                    <option value="/mod/page/view.php?id=92180&amp;forceview=1" >Maven</option>
+                    <option value="/mod/quiz/view.php?id=92181&amp;forceview=1" >Quiz: Maven</option>
+                    <option value="/mod/page/view.php?id=92182&amp;forceview=1" >Code-Along: Class Roster Spring DI</option>
+                    <option value="/mod/page/view.php?id=92183&amp;forceview=1" >Exercise: DVD Library DI Conversion</option>
+                    <option value="/mod/quiz/view.php?id=92184&amp;forceview=1" >Quiz: Spring DI</option>
+                    <option value="/mod/page/view.php?id=92185&amp;forceview=1" >Summative Exercise: Vending Machine with Spring DI</option>
+                    <option value="/mod/assign/view.php?id=92186&amp;forceview=1" >Assessment: Vending Machine with Spring DI</option>
+                    <option value="/mod/quiz/view.php?id=92187&amp;forceview=1" >Summative Quiz: Advanced Java</option>
+                    <option value="/mod/lti/view.php?id=92188&amp;forceview=1" >MidPoint Assessment: Advanced Java</option>
+                    <option value="/mod/assign/view.php?id=92190&amp;forceview=1" >Flooring Mastery - Class Diagrams &amp; Flowchart</option>
+                    <option value="/mod/quiz/view.php?id=92191&amp;forceview=1" >Summative Quiz: Java</option>
+                    <option value="/mod/page/view.php?id=92192&amp;forceview=1" >Overview: Relational Databases</option>
+                    <option value="/mod/page/view.php?id=92193&amp;forceview=1" >What is a Database?</option>
+                    <option value="/mod/book/view.php?id=92194&amp;forceview=1" >Normalization</option>
+                    <option value="/mod/page/view.php?id=92195&amp;forceview=1" >Entity Relationship Diagrams</option>
+                    <option value="/mod/page/view.php?id=92196&amp;forceview=1" >ACID Compliance</option>
+                    <option value="/mod/book/view.php?id=92197&amp;forceview=1" >Code-Along: Normalize the Vinyl Record Shop Database</option>
+                    <option value="/mod/page/view.php?id=92198&amp;forceview=1" >Database Design Activities</option>
+                    <option value="/mod/page/view.php?id=92199&amp;forceview=1" >Database Design Assessment</option>
+                    <option value="/mod/assign/view.php?id=92200&amp;forceview=1" >Database Design Assessment</option>
+                    <option value="/mod/page/view.php?id=92201&amp;forceview=1" >MySQL Server Installation</option>
+                    <option value="/mod/page/view.php?id=92202&amp;forceview=1" >Getting Started with MySQL Workbench</option>
+                    <option value="/mod/page/view.php?id=92203&amp;forceview=1" >SQL Overview</option>
+                    <option value="/mod/page/view.php?id=92204&amp;forceview=1" >Null Values</option>
+                    <option value="/mod/page/view.php?id=92205&amp;forceview=1" >Indexes</option>
+                    <option value="/mod/page/view.php?id=92206&amp;forceview=1" >Overview: Database Management using DDL</option>
+                    <option value="/mod/page/view.php?id=92207&amp;forceview=1" >Database Management</option>
+                    <option value="/mod/page/view.php?id=92208&amp;forceview=1" >MySQL Data Types</option>
+                    <option value="/mod/page/view.php?id=92209&amp;forceview=1" >Managing Tables in MySQL</option>
+                    <option value="/mod/page/view.php?id=92210&amp;forceview=1" >Managing Relationships in MySQL</option>
+                    <option value="/mod/book/view.php?id=92211&amp;forceview=1" >Code-Along: Build the Vinyl Record Shop Database</option>
+                    <option value="/mod/page/view.php?id=92212&amp;forceview=1" >Exercise: Books Database DDL</option>
+                    <option value="/mod/page/view.php?id=92213&amp;forceview=1" >Exercise: Movies Database DDL</option>
+                    <option value="/mod/page/view.php?id=92214&amp;forceview=1" >Cumulative Exercise: DDL</option>
+                    <option value="/mod/quiz/view.php?id=92215&amp;forceview=1" >Quiz: DDL</option>
+                    <option value="/mod/page/view.php?id=92216&amp;forceview=1" >Overview: Data Management (DML)</option>
+                    <option value="/mod/page/view.php?id=92217&amp;forceview=1" >Data Manipulation Language (DML)</option>
+                    <option value="/mod/page/view.php?id=92218&amp;forceview=1" >Create a Database</option>
+                    <option value="/mod/page/view.php?id=92219&amp;forceview=1" >Insert Data</option>
+                    <option value="/mod/page/view.php?id=92220&amp;forceview=1" >Update Data</option>
+                    <option value="/mod/page/view.php?id=92221&amp;forceview=1" >Delete Data</option>
+                    <option value="/mod/page/view.php?id=92222&amp;forceview=1" >Summary: DML</option>
+                    <option value="/mod/book/view.php?id=92223&amp;forceview=1" >Code-Along: Add Data to the Vinyl Record Shop Database</option>
+                    <option value="/mod/page/view.php?id=92224&amp;forceview=1" >SELECT Queries</option>
+                    <option value="/mod/page/view.php?id=92225&amp;forceview=1" >SELECT Activities</option>
+                    <option value="/mod/page/view.php?id=92226&amp;forceview=1" >JOIN Queries</option>
+                    <option value="/mod/page/view.php?id=92227&amp;forceview=1" >Exercises: JOIN Queries</option>
+                    <option value="/mod/page/view.php?id=92228&amp;forceview=1" >Sorting and Limiting Query Results</option>
+                    <option value="/mod/page/view.php?id=92229&amp;forceview=1" >Grouping and Aggregates</option>
+                    <option value="/mod/page/view.php?id=92230&amp;forceview=1" >Exercises: Grouping and Sorting</option>
+                    <option value="/mod/page/view.php?id=92231&amp;forceview=1" >Cumulative Exercise: World Database</option>
+                    <option value="/mod/page/view.php?id=92232&amp;forceview=1" >Cumulative Exercise: Hotel Schema</option>
+                    <option value="/mod/quiz/view.php?id=92233&amp;forceview=1" >Quiz: MySQL DML</option>
+                    <option value="/mod/page/view.php?id=92234&amp;forceview=1" >Subqueries and Views</option>
+                    <option value="/mod/page/view.php?id=92235&amp;forceview=1" >Transactions</option>
+                    <option value="/mod/page/view.php?id=92236&amp;forceview=1" >Schema Optimization and Indexing</option>
+                    <option value="/mod/page/view.php?id=92237&amp;forceview=1" >Replication and Scaling</option>
+                    <option value="/mod/page/view.php?id=92238&amp;forceview=1" >Overview: Data-Driven Web Applications</option>
+                    <option value="/mod/page/view.php?id=92239&amp;forceview=1" >Spring Boot REST with JDBC Template</option>
+                    <option value="/mod/page/view.php?id=92240&amp;forceview=1" >JDBC Concept Overview</option>
+                    <option value="/mod/page/view.php?id=92241&amp;forceview=1" >JDBC Template</option>
+                    <option value="/mod/page/view.php?id=92242&amp;forceview=1" >JDBC Template and Complex Relationships</option>
+                    <option value="/mod/page/view.php?id=92243&amp;forceview=1" >JDBC Template and Testing</option>
+                    <option value="/mod/page/view.php?id=92244&amp;forceview=1" >HTTP, REST, and JSON</option>
+                    <option value="/mod/page/view.php?id=92245&amp;forceview=1" >Introduction to Spring MVC with Spring Boot</option>
+                    <option value="/mod/page/view.php?id=92246&amp;forceview=1" >Spring Boot REST Service</option>
+                    <option value="/mod/page/view.php?id=92247&amp;forceview=1" >Spring Boot REST Service with JDBC Template</option>
+                    <option value="/mod/page/view.php?id=92248&amp;forceview=1" >Exercise: Guess the Number REST Service</option>
+                    <option value="/mod/assign/view.php?id=92249&amp;forceview=1" >Assessment: Guess the Number REST Service</option>
+                    <option value="/mod/page/view.php?id=92250&amp;forceview=1" >Overview: REST Web Services via jQuery</option>
+                    <option value="/mod/page/view.php?id=92251&amp;forceview=1" >Web Services: Rest vs. SOAP</option>
+                    <option value="/mod/page/view.php?id=92252&amp;forceview=1" >Introduction to jQuery</option>
+                    <option value="/mod/page/view.php?id=92253&amp;forceview=1" >Exercise: jQuery HTML Elements</option>
+                    <option value="/mod/page/view.php?id=92254&amp;forceview=1" >Exercise: jQuery Browser Events</option>
+                    <option value="/mod/page/view.php?id=92255&amp;forceview=1" >JSON</option>
+                    <option value="/mod/page/view.php?id=92256&amp;forceview=1" >REST API Design</option>
+                    <option value="/mod/page/view.php?id=92257&amp;forceview=1" >Getting Started with Postman</option>
+                    <option value="/mod/page/view.php?id=92258&amp;forceview=1" >Ajax</option>
+                    <option value="/mod/page/view.php?id=92259&amp;forceview=1" >Exercise: REST</option>
+                    <option value="/mod/book/view.php?id=92260&amp;forceview=1" >Code-Along: Build a Contact List REST Client</option>
+                    <option value="/mod/page/view.php?id=92261&amp;forceview=1" >Exercise: DVD Library</option>
+                    <option value="/mod/page/view.php?id=92262&amp;forceview=1" >Exercise: Open Weather Map REST Client</option>
+                    <option value="/mod/quiz/view.php?id=92263&amp;forceview=1" >Quiz: REST Web Services via jQuery</option>
+                    <option value="/mod/page/view.php?id=92264&amp;forceview=1" >Spring Boot Full Stack Web Apps</option>
+                    <option value="/mod/page/view.php?id=92265&amp;forceview=1" >Spring Boot with Thymeleaf</option>
+                    <option value="/mod/book/view.php?id=92266&amp;forceview=1" >Code-Along: JDBC Template and Thymeleaf</option>
+                    <option value="/mod/page/view.php?id=92267&amp;forceview=1" >Input Validation</option>
+                    <option value="/mod/page/view.php?id=92268&amp;forceview=1" >Supplement: Tomcat Installation</option>
+                    <option value="/mod/page/view.php?id=92269&amp;forceview=1" >Exercise: Superheroes Sightings Data Layer</option>
+                    <option value="/mod/page/view.php?id=92270&amp;forceview=1" >Exercise: Superhero Sightings Spring Boot Web App</option>
+                    <option value="/mod/assign/view.php?id=92271&amp;forceview=1" >Assignment: Superhero Sightings Data Layer</option>
+                    <option value="/mod/assign/view.php?id=92272&amp;forceview=1" >Assignment: Superhero Sightings Spring Boot Web App</option>
+                    <option value="/mod/page/view.php?id=92273&amp;forceview=1" >Spring MVC</option>
+                    <option value="/mod/page/view.php?id=92274&amp;forceview=1" >Java Persistence API (JPA)</option>
+                    <option value="/mod/page/view.php?id=92275&amp;forceview=1" >Spring Boot with JPA</option>
+                    <option value="/mod/assign/view.php?id=92276&amp;forceview=1" >Car Dealership</option>
+                    <option value="/mod/assign/view.php?id=92277&amp;forceview=1" >Mastery Assignment: Blog / Content Management System</option>
+                    <option value="/mod/page/view.php?id=92278&amp;forceview=1" >Capstone Exercise: Blog / Content Management System</option>
+                    <option value="/mod/book/view.php?id=92279&amp;forceview=1" >Capstone Resources: Hello Security Code-Along</option>
+                    <option value="/mod/page/view.php?id=92329&amp;forceview=1" >Introduction to React</option>
+                    <option value="/mod/page/view.php?id=92330&amp;forceview=1" >Functional &amp; Class Components</option>
+                    <option value="/mod/page/view.php?id=92331&amp;forceview=1" >Styling &amp; Layout</option>
+                    <option value="/mod/page/view.php?id=92332&amp;forceview=1" >React Hooks</option>
+                    <option value="/mod/book/view.php?id=92333&amp;forceview=1" >Code Along: State Hooks</option>
+                    <option value="/mod/book/view.php?id=92334&amp;forceview=1" >Code Along: Effect Hooks</option>
+                    <option value="/mod/page/view.php?id=92335&amp;forceview=1" >Exercise: Timer App</option>
+                    <option value="/mod/page/view.php?id=92336&amp;forceview=1" >Exercise: Product Hunt</option>
+                    <option value="/mod/page/view.php?id=92337&amp;forceview=1" >Exercise: Simple React Calculator</option>
+                    <option value="/mod/page/view.php?id=92339&amp;forceview=1" >Web Services</option>
+                    <option value="/mod/page/view.php?id=92340&amp;forceview=1" >REST Web Services &amp; Fetch</option>
+                    <option value="/mod/page/view.php?id=92341&amp;forceview=1" >REST API Design with Contact List</option>
+                    <option value="/mod/book/view.php?id=92342&amp;forceview=1" >Code Along: Contact List</option>
+                    <option value="/mod/page/view.php?id=92343&amp;forceview=1" >Exercise: React Dvd Library</option>
+                    <option value="/mod/book/view.php?id=92345&amp;forceview=1" >Code Along: Bug Tracker</option>
+                    <option value="/mod/book/view.php?id=92346&amp;forceview=1" >Code Along: Review Dashboard</option>
+                    <option value="/mod/assign/view.php?id=92347&amp;forceview=1" >Assignment: Vending Machine</option>
+                    <option value="/mod/page/view.php?id=92348&amp;forceview=1" >Exercise: Vending Machine</option>
+        </select>
+            <noscript>
+                <input type="submit" class="btn btn-secondary ml-1" value="Go">
+            </noscript>
+    </form>
+</div>
+
+        </div>
+</div>
+    <div class="col-md-4">        <div class="float-right">
+                <a href="https://academy.engagelms.com/mod/assign/view.php?id=92190&forceview=1" id="next-activity-link" class="btn btn-link" >Next activity ▶︎</a>
+
+        </div>
+</div>
+</div>
+</div>
+                        
+
+                    </section>
+                </div>
+            </div>
+        </div>
+        
+        <footer id="page-footer" class="footer-popover bg-white">
+        
+              <div class="footer-content psc-footer">
+                  <div class="container-fluid">
+                      <div class="psc-footer"><div class="row psc-row"><div class="col-md-3"><span></span></div></div></div>
+                  </div>
+              </div>
+        
+              <div class="footer-content">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col col-12" data-region="footer-container-popover">
+                      <a href="#" class="popover-link d-none d-sm-inline" data-action="footer-popover" aria-label="Show footer">More information</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+            <div class="footer-content-popover container " data-region="footer-content-popover">
+              <div class="footer-section p-3 border-bottom">
+                  <div class="links-footer"><div><a href="https://www.wiley.com/en-us/privacy" target="_blank">Privacy Policy</a></div><div><a href="https://www.wiley.com/en-us/terms-of-use" target="_blank">Terms of Use</a></div></div>
+              </div>
+                  <div class="footer-section p-3 border-bottom">
+        
+        
+                          <div><a href="https://support.engagelms.com/s/" target="blank"><i class="icon fa fa-envelope-o fa-fw " aria-hidden="true"  ></i>Contact site support<i class="icon fa fa-external-link fa-fw ml-1" aria-hidden="true"  ></i></a></div>
+                  </div>
+              <div class="footer-section p-3 border-bottom">
+                  <div class="logininfo">
+              <div class="logininfo">You are logged in as <a href="https://academy.engagelms.com/user/profile.php?id=4658" title="View profile">Jordan Paille</a> (<a href="https://academy.engagelms.com/login/logout.php?sesskey=9rHxJMqoJK">Log out</a>)</div>
+                  </div>
+                  <div class="tool_usertours-resettourcontainer">
+                  </div>
+        
+              
+              <script>
+//<![CDATA[
+var require = {
+    baseUrl : 'https://academy.engagelms.com/lib/requirejs.php/1677568962/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://academy.engagelms.com/lib/javascript.php/1677568962/lib/jquery/jquery-3.6.0.min',
+        jqueryui: 'https://academy.engagelms.com/lib/javascript.php/1677568962/lib/jquery/ui-1.13.0/jquery-ui.min',
+        jqueryprivate: 'https://academy.engagelms.com/lib/javascript.php/1677568962/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).
+      '*': { process: 'core/first' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script src="https://academy.engagelms.com/lib/javascript.php/1677568962/lib/requirejs/require.min.js"></script>
+<script>
+//<![CDATA[
+M.util.js_pending("core/first");
+require(['core/first'], function() {
+require(['core/prefetch'])
+;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp('en');
+});;
+M.util.js_pending('core_courseformat/courseeditor'); require(['core_courseformat/courseeditor'], function(amd) {amd.setViewFormat("696", {"editing":false,"supportscomponents":true,"statekey":"1677568962_1678044821"}); M.util.js_complete('core_courseformat/courseeditor');});;
+
+require(['core_courseformat/local/courseindex/placeholder'], function(component) {
+    component.init('6404eea1cc95b6404eea1cc95c1-course-index-placeholder');
+});
+;
+
+require(['core_courseformat/local/courseindex/drawer'], function(component) {
+    component.init('courseindex');
+});
+;
+M.util.js_pending('core_courseformat/local/content/activity_header'); require(['core_courseformat/local/content/activity_header'], function(amd) {amd.init(); M.util.js_complete('core_courseformat/local/content/activity_header');});;
+
+    require(['core/moremenu'], function(moremenu) {
+        moremenu(document.querySelector('#moremenu-6404eea1ea85d-navbar-nav'));
+    });
+;
+
+require(
+[
+    'jquery',
+],
+function(
+    $
+) {
+    var uniqid = "6404eea1eeaf26404eea1cc95c3";
+    var container = $('#searchinput-navbar-' + uniqid);
+    var opensearch = container.find('[data-action="opensearch"]');
+    var input = container.find('[data-region="input"]');
+    var submit = container.find('[data-action="submit"]');
+
+    submit.on('click', function(e) {
+        if (input.val() === '') {
+            e.preventDefault();
+        }
+    });
+    container.on('hidden.bs.collapse', function() {
+        opensearch.removeClass('d-none');
+        input.val('');
+    });
+    container.on('show.bs.collapse', function() {
+        opensearch.addClass('d-none');
+    });
+    container.on('shown.bs.collapse', function() {
+        input.focus();
+    });
+});
+;
+
+require(
+[
+    'jquery',
+],
+function(
+    $
+) {
+    var uniqid = "6404eea1ef8006404eea1cc95c4";
+    var container = $('#searchinput-navbar-' + uniqid);
+    var opensearch = container.find('[data-action="opensearch"]');
+    var input = container.find('[data-region="input"]');
+    var submit = container.find('[data-action="submit"]');
+
+    submit.on('click', function(e) {
+        if (input.val() === '') {
+            e.preventDefault();
+        }
+    });
+    container.on('hidden.bs.collapse', function() {
+        opensearch.removeClass('d-none');
+        input.val('');
+    });
+    container.on('show.bs.collapse', function() {
+        opensearch.addClass('d-none');
+    });
+    container.on('shown.bs.collapse', function() {
+        input.focus();
+    });
+});
+;
+
+require(['jquery', 'message_popup/notification_popover_controller'], function($, Controller) {
+    var container = $('#nav-notification-popover-container');
+    var controller = new Controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+;
+
+require(['jquery', 'core/popover_region_controller'], function($, controller) {
+    var container = $('#nav-mail-popover-container');
+    var controller = new controller(container);
+    controller.registerListNavigationEventListeners();
+});
+;
+
+    require(['core/usermenu'], function(UserMenu) {
+        UserMenu.init();
+    });
+;
+
+require(['theme_boost/drawers']);
+;
+
+require(['theme_boost/drawers']);
+;
+
+        require(['jquery', 'core/custom_interaction_events'], function($, CustomEvents) {
+            CustomEvents.define('#jump-to-activity', [CustomEvents.events.accessibleChange]);
+            $('#jump-to-activity').on(CustomEvents.events.accessibleChange, function() {
+                if (!$(this).val()) {
+                    return false;
+                }
+                $('#url_select_f6404eea1cc95c7').submit();
+            });
+        });
+    ;
+
+require(['theme_boost/footer-popover'], function(FooterPopover) {
+    FooterPopover.init();
+});
+;
+
+M.util.js_pending('theme_boost/loader');
+require(['theme_boost/loader', 'theme_boost/drawer'], function(Loader, Drawer) {
+    Drawer.init();
+    M.util.js_complete('theme_boost/loader');
+});
+;
+M.util.js_pending('core/notification'); require(['core/notification'], function(amd) {amd.init(182110, []); M.util.js_complete('core/notification');});;
+M.util.js_pending('core/log'); require(['core/log'], function(amd) {amd.setConfig({"level":"warn"}); M.util.js_complete('core/log');});;
+M.util.js_pending('core/page_global'); require(['core/page_global'], function(amd) {amd.init(); M.util.js_complete('core/page_global');});;
+M.util.js_pending('core/utility'); require(['core/utility'], function(amd) {M.util.js_complete('core/utility');});
+    M.util.js_complete("core/first");
+});
+//]]>
+</script>
+<script>
+//<![CDATA[
+M.yui.add_module({"core_comment":{"name":"core_comment","fullpath":"https:\/\/academy.engagelms.com\/lib\/javascript.php\/1677568962\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]}});
+
+//]]>
+</script>
+<script src="https://academy.engagelms.com/theme/javascript.php/engage/1677568962/footer"></script>
+<script>
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"Last modified","name":"Name","error":"Error","info":"Information","yes":"Yes","no":"No","cancel":"Cancel","addcomment":"Add a comment...","comments":"Comments","commentscount":"Comments ({$a})","commentsrequirelogin":"You need to log in to view the comments.","deletecommentbyon":"Delete comment posted by {$a->user} on {$a->time}","confirm":"Confirm","areyousure":"Are you sure?","closebuttontitle":"Close","unknownerror":"Unknown error","file":"File","url":"URL","collapseall":"Collapse all","expandall":"Expand all"},"repository":{"type":"Type","size":"Size","invalidjson":"Invalid JSON string","nofilesattached":"No files attached","filepicker":"File picker","logout":"Logout","nofilesavailable":"No files available","norepositoriesavailable":"Sorry, none of your current repositories can return files in the required format.","fileexistsdialogheader":"File exists","fileexistsdialog_editor":"A file with that name has already been attached to the text you are editing.","fileexistsdialog_filemanager":"A file with that name has already been attached","renameto":"Rename to \"{$a}\"","referencesexist":"There are {$a} links to this file","select":"Select"},"admin":{"confirmdeletecomments":"You are about to delete comments, are you sure?","confirmation":"Confirmation"},"debug":{"debuginfo":"Debug info","line":"Line","stacktrace":"Stack trace"},"langconfig":{"labelsep":": "}};
+//]]>
+</script>
+<script>
+//<![CDATA[
+(function() {Y.use("moodle-filter_mathjaxloader-loader",function() {M.filter_mathjaxloader.configure({"mathjaxconfig":"\nMathJax.Hub.Config({\n    config: [\"Accessible.js\", \"Safe.js\"],\n    errorSettings: { message: [\"!\"] },\n    skipStartupTypeset: true,\n    messageStyle: \"none\"\n});\n","lang":"en"});
+});
+M.util.help_popups.setup(Y);
+ M.util.js_pending('random6404eea1cc95c10'); Y.on('domready', function() {  M.util.js_pending('random6404eea1cc95c10'); Y.use('core_comment', function(Y) { M.core_comment.init(Y, {"client_id":"6404eea216cc5","commentarea":"submission_comments","itemid":"13909","page":0,"courseid":"696","contextid":182110,"component":"assignsubmission_comments","notoggle":false,"autostart":false});  M.util.js_complete('random6404eea1cc95c10'); });  M.util.js_complete('random6404eea1cc95c10'); });
+ M.util.js_pending('random6404eea1cc95c11'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random6404eea1cc95c11'); });
+})();
+//]]>
+</script>
+
+            </div>
+                <div class="footer-section p-3">
+                    <div>Powered by <a href="https://moodle.com">Moodle</a></div>
+                </div>
+            </div>
+        
+            <div class="footer-content-debugging footer-dark bg-dark text-light">
+                <div class="container-fluid footer-dark-inner">
+                    
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+</div>
+
+</body>
+</html>
