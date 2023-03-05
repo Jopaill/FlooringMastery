@@ -29,7 +29,8 @@ public class FlooringController {
             int choice = view.displayMenuAndGetChoice();
             
             switch(choice) {
-                case 1: //view all
+                case 1: 
+                    //View all Orders on a particular date is implemented
                     ld=view.displayOrders();
                     List<Order> orders=service.getOrdersForDate(ld);
                     view.displayOrders(orders);
