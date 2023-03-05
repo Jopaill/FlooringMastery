@@ -6,6 +6,8 @@
 package com.sg.flooringmastery.ui;
 
 import com.sg.flooringmastery.model.Order;
+import com.sg.flooringmastery.model.Product;
+import com.sg.flooringmastery.model.StateInfo;
 import java.math.BigDecimal;
 import java.time.DateTimeException;
 import java.time.LocalDate;
@@ -168,17 +170,6 @@ public class View {
                 c=='.' ||
                 c==' ';
     }
-    
-//    public static void main(String args[]){
-//        View view=new View();
-//        char j='j'
-//        System.out.println(view.charIsValid(j));
-//        System.out.println(Character.isDigit(j));
-//        System.out.println(Character.isDigit(j));
-//        System.out.println(Character.isDigit(j));
-//        System.out.println(Character.isDigit(j));
-//        System.out.println(Character.isDigit(j));
-//    }
 
     public LocalDate getFutureDate() {
         ld=getDate();
@@ -187,5 +178,40 @@ public class View {
             ld=getDate();
         }
         return ld;
+    }
+
+    public int displayStatesAndGetChoice(List<StateInfo> states) {
+        io.print("Which state do you live in?");
+        for(int i=0;i<states.size();i++){
+           io.print((i+1)+"    -    "+states.get(i).getStateName());
+        }
+        int choice=io.readInt("Simply enter the number", 1, states.size());
+        return choice-1;
+    }
+
+    public int displayProductsAndGetChoice(List<Product> products) {
+        io.print("Which product do you want?");
+        for(int i=0;i<products.size();i++){
+            Product cur = products.get(i);
+            io.print((i+1)+"    -    "+cur.getProductType()+"("+cur.getCostPerSquareFoot()+" $/sq foot )");
+        }
+        int choice=io.readInt("Simply enter the number", 1, products.size());
+        return choice-1;
+    }
+
+    public BigDecimal getAreaWanted() {
+        while(true){
+            try{
+                String areaString=io.readString("Enter an area of at least 100 sq foot");
+                BigDecimal areaBigD=new BigDecimal(areaString);
+                return areaBigD;
+            }catch(Exception e){
+                io.print("The area entered is not right. Try again");
+            }
+            
+        }
+        
+        
+        
     }
 }

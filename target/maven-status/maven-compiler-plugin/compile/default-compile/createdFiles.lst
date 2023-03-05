@@ -3,6 +3,8 @@ com\sg\flooringmastery\controller\FlooringController.class
 com\sg\flooringmastery\App.class
 com\sg\flooringmastery\model\Order.class
 com\sg\flooringmastery\ui\UserIO.class
-com\sg\floringmastery\dao\Dao.class
+com\sg\flooringmastery\service\Service.class
 com\sg\flooringmastery\ui\UserIOConsoleImpl.class
-com\sg\floringmastery\service\Service.class
+com\sg\flooringmastery\model\Product.class
+com\sg\flooringmastery\model\StateInfo.class
+com\sg\flooringmastery\dao\Dao.class

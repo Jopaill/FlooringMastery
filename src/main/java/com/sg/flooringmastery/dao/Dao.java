@@ -6,6 +6,8 @@
 package com.sg.flooringmastery.dao;
 
 import com.sg.flooringmastery.model.Order;
+import com.sg.flooringmastery.model.Product;
+import com.sg.flooringmastery.model.StateInfo;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -21,18 +23,18 @@ import java.util.Scanner;
  */
 public class Dao {
     //reusable variables
-    int orderNumber;
-    String customerName;
-    String state;
-    BigDecimal taxRate;
-    String productType;
-    BigDecimal area;
-    BigDecimal costPerSquareFoot;
-    BigDecimal laborCostPerSquareFoot;
-    BigDecimal materialCost;
-    BigDecimal laborCost;
-    BigDecimal tax;
-    BigDecimal total;
+    private int orderNumber;
+    private String customerName;
+    private String state;
+    private BigDecimal taxRate;
+    private String productType;
+    private BigDecimal area;
+    private BigDecimal costPerSquareFoot;
+    private BigDecimal laborCostPerSquareFoot;
+    private BigDecimal materialCost;
+    private BigDecimal laborCost;
+    private BigDecimal tax;
+    private BigDecimal total;
     
     private String ORDERS_PREFIX="Orders/";
     public List<Order> retrieveAllOrderOfFile(String nameOfFile) 
@@ -45,19 +47,19 @@ public class Dao {
             linesOfFile.add(sc.nextLine());
         }
         sc.close();
-        return unmarshall(linesOfFile);
+        return unmarshallOrders(linesOfFile);
     }
     
     
-    private List<Order> unmarshall(List<String> ls){
+    private List<Order> unmarshallOrders(List<String> ls){
         List<Order> result = new ArrayList<>();
         for(String s :ls){
-            result.add(unmarshall(s));
+            result.add(unmarshallOrder(s));
         }
         return result;
     }
     
-    private Order unmarshall(String ls){
+    private Order unmarshallOrder(String ls){
         Order ord=new Order();
         String[] sp = ls.split(",");
         //Converting the strings into the right types
@@ -89,6 +91,65 @@ public class Dao {
         ord.setTotal(total);
         
         return ord;
+    }
+    private String STATES_FILE="Data/Taxes.txt";
+    public List<StateInfo> getStateInfos()
+            throws FileNotFoundException, IOException {
+        Scanner sc = new Scanner(new BufferedReader(new FileReader(STATES_FILE)));
+        List<String> linesOfFile=new ArrayList<>();
+        sc.nextLine();
+        while(sc.hasNextLine()){
+            linesOfFile.add(sc.nextLine());
+        }
+        sc.close();
+        return unmarshallStates(linesOfFile);
+    }
+    
+    private List<StateInfo> unmarshallStates(List<String> statesInfoString){
+        List<StateInfo> statesInfoObjects = new ArrayList<StateInfo>();
+        for(String stateInfoString: statesInfoString){
+            statesInfoObjects.add(unmarshallState(stateInfoString));
+        }
+        return statesInfoObjects;
+    }
+    
+    private StateInfo unmarshallState(String state){
+        String[] stateStringSpli = state.split(",");
+        StateInfo stateInfo=new StateInfo();
+        stateInfo.setState(stateStringSpli[0]);
+        stateInfo.setStateName(stateStringSpli[1]);
+        stateInfo.setTaxRate(new BigDecimal(stateStringSpli[2]));
+        return stateInfo;
+    }
+    
+    private String PRODUCTS_FILE="Data/Products.txt";
+    public List<Product> getProducts() 
+            throws FileNotFoundException, IOException {
+        Scanner sc = new Scanner(new BufferedReader(new FileReader(PRODUCTS_FILE)));
+        List<String> linesOfFile=new ArrayList<>();
+        sc.nextLine();
+        while(sc.hasNextLine()){
+            linesOfFile.add(sc.nextLine());
+        }
+        sc.close();
+        return unmarshallProducts(linesOfFile);
+    }
+
+    private List<Product> unmarshallProducts(List<String> linesOfFile) {
+        List<Product> products = new ArrayList<>();
+        for(String st:linesOfFile){
+            products.add(unmarshallProduct(st));
+        }
+        return products;
+    }
+
+    private Product unmarshallProduct(String st) {
+        String[] productSplitted = st.split(",");
+        Product product = new Product();
+        product.setProductType(productSplitted[0]);
+        product.setCostPerSquareFoot(new BigDecimal(productSplitted[1]));
+        product.setLaborCostPerSquareFoot(new BigDecimal(productSplitted[2]));
+        return product;
     }
     
 }

@@ -6,9 +6,12 @@
 package com.sg.flooringmastery.controller;
 
 import com.sg.flooringmastery.model.Order;
+import com.sg.flooringmastery.model.Product;
+import com.sg.flooringmastery.model.StateInfo;
 import com.sg.flooringmastery.ui.View;
 import com.sg.flooringmastery.service.Service;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -30,16 +33,11 @@ public class FlooringController {
             
             switch(choice) {
                 case 1: 
-                    //View all Orders on a particular date is implemented
-                    ld=view.displayOrders();
-                    List<Order> orders=service.getOrdersForDate(ld);
-                    view.displayOrders(orders);
+                    displayOrders();
                     break;
                 case 2: //view one
-                    ld=view.getFutureDate();
-                    String name =view.getName();
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                    //break;
+                    addingNewOrder();
+                    break;
                 case 3: //add
                     //Book newBook = view.getNewBook();
                     //service.addBook(newBook);
@@ -78,6 +76,44 @@ public class FlooringController {
                     break;
             }
         }
+        
+        
+
     }
+    //Case 1: Displaying orders for a certain date
+    private void displayOrders() throws IOException{
+        ld=view.displayOrders();
+        List<Order> orders=service.getOrdersForDate(ld);
+        view.displayOrders(orders);
+    }
+    
+    //Case 2: Adding a new order to the system
+    private void addingNewOrder() throws IOException{
+        ld=view.getFutureDate();
+        String name =view.getName();
+        //I would need to get the valid states
+        //Display them to the user and ask to choose from those states
+        List<StateInfo> states = service.getStateInfos();
+        int choiceOfState=view.displayStatesAndGetChoice(states);
+        //System.out.println("State choosen is "+states.get(choiceOfState).getStateName());
+        //Do the same with the product type
+        List<Product> products = service.getProducts();
+        int choiceOfProduct = view.displayProductsAndGetChoice(products);
+        //System.out.println("Product choosen is "+products.get(choiceOfProduct).getProductType());
+        BigDecimal area=view.getAreaWanted();
+        
+        //We can now create the order
+        Order ord = service.createNewOrder(
+                ld, 
+                name, 
+                states.get(choiceOfState),
+                products.get(choiceOfProduct),
+                area);
+        
+    }
+    
+    
+    
+    
     
 }
