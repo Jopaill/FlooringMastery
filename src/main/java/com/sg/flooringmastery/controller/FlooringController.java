@@ -7,7 +7,7 @@ package com.sg.flooringmastery.controller;
 
 import com.sg.flooringmastery.model.Order;
 import com.sg.flooringmastery.ui.View;
-import com.sg.floringmastery.service.Service;
+import com.sg.flooringmastery.service.Service;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;

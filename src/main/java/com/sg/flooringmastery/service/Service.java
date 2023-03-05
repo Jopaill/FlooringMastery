@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sg.floringmastery.service;
+package com.sg.flooringmastery.service;
 
 import com.sg.flooringmastery.model.Order;
-import com.sg.floringmastery.dao.Dao;
+import com.sg.flooringmastery.dao.Dao;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
