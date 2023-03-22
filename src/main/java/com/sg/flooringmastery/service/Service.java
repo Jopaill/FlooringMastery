@@ -12,6 +12,9 @@ import com.sg.flooringmastery.model.Product;
 import com.sg.flooringmastery.model.StateInfo;
 import java.io.IOException;
 import java.math.BigDecimal;
+import static java.math.BigDecimal.ROUND_HALF_EVEN;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +25,8 @@ import java.util.List;
  */
 public class Service {
     Dao dao=new DaoImpl();
+    private final static MathContext mc = new MathContext(4);
+    BigDecimal ONE_HUNDRED=new BigDecimal("100");
 
     public void getOrdersForDate(int year, int month, int day) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -50,8 +55,45 @@ public class Service {
         return dao.getProducts();
     }
 
-    public Order createNewOrder(LocalDate ld, String name, StateInfo get, Product get0, BigDecimal area) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Order createNewOrder(LocalDate ld, String customerName, StateInfo stateInfo, Product product, BigDecimal area) {
+        int orderNumber = dao.getNeworderNumber();
+        //customerName we have
+        String state=stateInfo.getState();
+        BigDecimal taxRate=new BigDecimal(stateInfo.getTaxRate().toString());
+        String productType=product.getProductType();
+        // BigDecimal area
+        BigDecimal costPerSquareFoot=product.getCostPerSquareFoot();
+        BigDecimal laborCostPerSquareFoot=product.getLaborCostPerSquareFoot();
+        BigDecimal materialCost=area.multiply(costPerSquareFoot)
+                .setScale(2, ROUND_HALF_EVEN);
+        BigDecimal laborCost=area.multiply(laborCostPerSquareFoot)
+                .setScale(2, ROUND_HALF_EVEN);
+        BigDecimal temp=materialCost.add(laborCost);
+        BigDecimal tax=temp
+                .multiply(
+                        taxRate.divide(ONE_HUNDRED))
+                .setScale(2, ROUND_HALF_EVEN);
+        BigDecimal total = temp.add(tax);
+        
+        Order order = new Order(
+                    orderNumber,
+                    customerName,
+                    state,
+                    taxRate,
+                    productType,
+                    area,
+                    costPerSquareFoot,
+                    laborCostPerSquareFoot,
+                    materialCost,
+                    laborCost,
+                    tax,
+                    total,
+                    ld
+                            );
+        System.out.println(order);
+        dao.addNewOrderToStorage(order);
+        return order;
     }
+    
     
 }

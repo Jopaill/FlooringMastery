@@ -25,4 +25,8 @@ public interface Dao {
     
     public List<Product> getProducts()
             throws FileNotFoundException, IOException ;
+
+    public int getNeworderNumber();
+
+    public void addNewOrderToStorage(Order order);
 }

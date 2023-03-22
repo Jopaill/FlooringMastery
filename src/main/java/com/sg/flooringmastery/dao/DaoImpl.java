@@ -9,10 +9,14 @@ import com.sg.flooringmastery.model.Order;
 import com.sg.flooringmastery.model.Product;
 import com.sg.flooringmastery.model.StateInfo;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -36,7 +40,9 @@ public class DaoImpl implements Dao{
     private BigDecimal tax;
     private BigDecimal total;
     
-    private String ORDERS_PREFIX="Orders/";
+    private final String ORDERS_PREFIX="Orders/";
+    private final String HEADER="OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total";
+    
     public List<Order> retrieveAllOrderOfFile(String nameOfFile) 
             throws FileNotFoundException, IOException {
         String nameOfPath=ORDERS_PREFIX+nameOfFile+".txt";
@@ -50,6 +56,12 @@ public class DaoImpl implements Dao{
         return unmarshallOrders(linesOfFile);
     }
     
+    private String returningDayOrMonthWithZero(int i){
+        if(i<10)
+            return "0"+i;
+        else
+            return ""+i;
+    }
     
     private List<Order> unmarshallOrders(List<String> ls){
         List<Order> result = new ArrayList<>();
@@ -151,5 +163,66 @@ public class DaoImpl implements Dao{
         product.setLaborCostPerSquareFoot(new BigDecimal(productSplitted[2]));
         return product;
     }
+
+    @Override
+    public int getNeworderNumber() {
+        int result=0;
+        try(BufferedReader br = new BufferedReader(new FileReader("Orders/OrderNumber.txt"))) {
+            result=Integer.valueOf(br.readLine());
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
+        }
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("Orders/OrderNumber.txt"))) {
+            bw.write(""+(result+1));
+            bw.close();
+        } catch (IOException e) {
+            System.out.println("Error writing file: " + e.getMessage());
+        }
+        return result;
+    }
+
+    @Override
+    public void addNewOrderToStorage(Order order) {
+        String toStore="\n"+order.toString();
+        LocalDate ld= order.getDateOfTheOrder();
+        String fileName = ORDERS_PREFIX+
+                "Orders_"+
+                returningDayOrMonthWithZero(ld.getMonthValue())+
+                returningDayOrMonthWithZero(ld.getDayOfMonth())+
+                ld.getYear()+
+                ".txt";
+        File file = new File(fileName);
+        if (file.exists() && file.isFile()) {
+            writeOrderToExistingFile(fileName, toStore);
+        } else {
+            writeToANewFile(fileName, toStore);
+        }
+    }
+    
+    private void writeOrderToExistingFile(String fileName, String toStore){
+        try {
+            FileWriter writer = new FileWriter(fileName, true);
+            writer.write(toStore);
+            writer.close();
+            System.out.println("Text appended to the file successfully.");
+        } catch (IOException e) {
+            System.out.println("An error occurred while appending text to the file.");
+            e.printStackTrace();
+        }
+    }
+    
+    private void writeToANewFile(String fileName, String toStore){
+        try {
+            FileWriter writer = new FileWriter(fileName, true);
+            writer.write(HEADER);
+            writer.write(toStore);
+            writer.close();
+            System.out.println("Text appended to the file successfully.");
+        } catch (IOException e) {
+            System.out.println("An error occurred while appending text to the file.");
+            e.printStackTrace();
+        }
+    }
+
     
 }

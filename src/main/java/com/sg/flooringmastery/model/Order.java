@@ -6,6 +6,7 @@
 package com.sg.flooringmastery.model;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 /**
  *
@@ -24,7 +25,40 @@ public class Order {
     private BigDecimal laborCost;
     private BigDecimal tax;
     private BigDecimal total;
+    private LocalDate dateOfTheOrder;
 
+    public LocalDate getDateOfTheOrder() {
+        return dateOfTheOrder;
+    }
+
+    public void setDateOfTheOrder(LocalDate dateOfTheOrder) {
+        this.dateOfTheOrder = dateOfTheOrder;
+    }
+
+
+    public Order(int orderNumber, String customerName, String state, BigDecimal taxRate, 
+            String productType, BigDecimal area, BigDecimal costPerSquareFoot, 
+            BigDecimal laborCostPerSquareFoot, BigDecimal materialCost, 
+            BigDecimal laborCost, BigDecimal tax, BigDecimal total, LocalDate ld) {
+        this.orderNumber=orderNumber;
+        this.customerName=customerName;
+        this.state=state;
+        this.taxRate=taxRate;
+        this.productType=productType;
+        this.area=area;
+        this.costPerSquareFoot=costPerSquareFoot;
+        this.laborCostPerSquareFoot=laborCostPerSquareFoot;
+        this.materialCost=materialCost;
+        this.laborCost=laborCost;
+        this.tax=tax;
+        this.total=total;
+        this.dateOfTheOrder=ld;
+    }
+    
+    public Order(){
+    }
+    
+    
     public void setOrderNumber(int orderNumber) {
         this.orderNumber = orderNumber;
     }
@@ -119,5 +153,21 @@ public class Order {
 
     public BigDecimal getTotal() {
         return total;
+    }
+    
+    @Override
+    public String toString(){
+        return orderNumber+","+
+                customerName+","+
+                state+","+
+                taxRate+","+
+                productType+","+
+                area+","+
+                costPerSquareFoot+","+
+                laborCostPerSquareFoot+","+
+                materialCost+","+
+                laborCost+","+
+                tax+","+
+                total;
     }
 }
