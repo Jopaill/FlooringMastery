@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class UserIOConsoleImpl implements UserIO {
 
     Scanner sc = new Scanner(System.in);
+    String string;
 
     @Override
     public void print(String message) {
@@ -53,7 +54,14 @@ public class UserIOConsoleImpl implements UserIO {
     @Override
     public int readInt(String prompt) {
         print(prompt);
-        return Integer.parseInt(sc.nextLine());
+        while(true){
+            try{
+                return Integer.parseInt(sc.nextLine());
+            }catch(NumberFormatException e){
+                print("This was not an integer. Try again");
+                print(prompt);
+            }
+        }
     }
 
     @Override
@@ -61,9 +69,16 @@ public class UserIOConsoleImpl implements UserIO {
         int num;
         do {
             print(prompt);
-            num = Integer.parseInt(sc.nextLine());
+            while(true){
+                try{
+                    num=Integer.parseInt(sc.nextLine());
+                    break;
+                }catch(NumberFormatException e){
+                    print("This was not an integer. Try again");
+                    print(prompt);
+                }
+            }
         } while (num < min || num > max);
-
         return num;
     }
 

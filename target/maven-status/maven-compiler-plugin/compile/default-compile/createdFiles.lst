@@ -1,5 +1,6 @@
 com\sg\flooringmastery\ui\View.class
 com\sg\flooringmastery\controller\FlooringController.class
+com\sg\flooringmastery\dao\DaoImpl.class
 com\sg\flooringmastery\App.class
 com\sg\flooringmastery\model\Order.class
 com\sg\flooringmastery\ui\UserIO.class

@@ -7,6 +7,7 @@ package com.sg.flooringmastery.service;
 
 import com.sg.flooringmastery.model.Order;
 import com.sg.flooringmastery.dao.Dao;
+import com.sg.flooringmastery.dao.DaoImpl;
 import com.sg.flooringmastery.model.Product;
 import com.sg.flooringmastery.model.StateInfo;
 import java.io.IOException;
@@ -20,7 +21,7 @@ import java.util.List;
  * @author Jordash
  */
 public class Service {
-    Dao dao=new Dao();
+    Dao dao=new DaoImpl();
 
     public void getOrdersForDate(int year, int month, int day) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

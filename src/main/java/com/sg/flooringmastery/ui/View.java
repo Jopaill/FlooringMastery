@@ -34,6 +34,8 @@ public class View {
     BigDecimal total;
     LocalDate ld;
     
+    BigDecimal ONE_HUNDRED=new BigDecimal("100");
+    
     
     
     UserIO io=new UserIOConsoleImpl();
@@ -204,6 +206,10 @@ public class View {
             try{
                 String areaString=io.readString("Enter an area of at least 100 sq foot");
                 BigDecimal areaBigD=new BigDecimal(areaString);
+                if(areaBigD.compareTo(ONE_HUNDRED)!=1){
+                    io.print("Make sure the area is at least 100");
+                    continue;
+                }
                 return areaBigD;
             }catch(Exception e){
                 io.print("The area entered is not right. Try again");
