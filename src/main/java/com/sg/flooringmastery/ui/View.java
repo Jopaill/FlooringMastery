@@ -220,4 +220,8 @@ public class View {
         
         
     }
+
+    public int getOrderNumber() {
+        return io.readInt("What is the order number?");
+    }
 }

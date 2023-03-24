@@ -29,4 +29,6 @@ public interface Dao {
     public int getNeworderNumber();
 
     public void addNewOrderToStorage(Order order);
+
+    public void removeAllOrdersForDay(String string);
 }

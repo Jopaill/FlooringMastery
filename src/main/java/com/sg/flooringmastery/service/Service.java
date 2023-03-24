@@ -14,8 +14,8 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import static java.math.BigDecimal.ROUND_HALF_EVEN;
 import java.math.MathContext;
-import java.math.RoundingMode;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +27,7 @@ public class Service {
     Dao dao=new DaoImpl();
     private final static MathContext mc = new MathContext(4);
     BigDecimal ONE_HUNDRED=new BigDecimal("100");
+    private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MMddyyyy");
 
     public void getOrdersForDate(int year, int month, int day) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -93,6 +94,27 @@ public class Service {
         System.out.println(order);
         dao.addNewOrderToStorage(order);
         return order;
+    }
+
+    public boolean removeOrder(LocalDate ld, int orderNumber) {
+        List<Order> orders;
+        try{
+            orders = dao.retrieveAllOrderOfFile("Orders_"+ld.format(dateTimeFormatter));
+        }catch(IOException e){
+            return false;
+        }
+        dao.removeAllOrdersForDay("Orders_"+ld.format(dateTimeFormatter));
+        boolean flagOrderFound=false;
+        for(Order order : orders){
+            if(order.getOrderNumber()==orderNumber){
+                flagOrderFound=true;
+                continue;
+            }else{
+                order.setDateOfTheOrder(ld);
+                dao.addNewOrderToStorage(order);
+            }
+        }
+        return true;      
     }
     
     

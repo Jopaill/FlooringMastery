@@ -204,9 +204,7 @@ public class DaoImpl implements Dao{
             FileWriter writer = new FileWriter(fileName, true);
             writer.write(toStore);
             writer.close();
-            System.out.println("Text appended to the file successfully.");
         } catch (IOException e) {
-            System.out.println("An error occurred while appending text to the file.");
             e.printStackTrace();
         }
     }
@@ -221,6 +219,21 @@ public class DaoImpl implements Dao{
         } catch (IOException e) {
             System.out.println("An error occurred while appending text to the file.");
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void removeAllOrdersForDay(String nameOfFile) {
+        File file = new File(ORDERS_PREFIX+nameOfFile+".txt");
+        if (file.exists()) {
+            boolean deleted = file.delete();
+            if (deleted) {
+                System.out.println("File deleted successfully");
+            } else {
+                System.out.println("Failed to delete the file");
+            }
+        } else {
+            System.out.println("File does not exist");
         }
     }
 

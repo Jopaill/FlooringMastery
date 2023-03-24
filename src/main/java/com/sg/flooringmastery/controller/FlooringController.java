@@ -39,23 +39,10 @@ public class FlooringController {
                     addingNewOrder();
                     break;
                 case 3: //add
-                    //Book newBook = view.getNewBook();
-                    //service.addBook(newBook);
-                    //view.displayAddSuccess();
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                    //break;
-                case 4: //update
-                    //String updateTitle = view.getBookTitleToUpdate();
-                    //Book updateBook = service.getBookByTitle(updateTitle);
-                    //if(updateBook != null) {
-                    //    updateBook = view.getUpdateBook(updateBook);
-                    //    service.updateBook(updateBook);
-                    //    view.displayUpdateSuccess();
-                    //} else {
-                    //    view.displayError("Book doesn't exist");
-                    //}
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                    //break;
+                    editAnOrder();
+                case 4: //Remove an order
+                    removeAnOrder();
+                    break;
                 case 5: //delete
 //                    String deleteTitle = view.getBookTitleToDelete();
 //                    Book deleteBook = service.getBookByTitle(deleteTitle);
@@ -76,9 +63,6 @@ public class FlooringController {
                     break;
             }
         }
-        
-        
-
     }
     //Case 1: Displaying orders for a certain date
     private void displayOrders() throws IOException{
@@ -110,6 +94,16 @@ public class FlooringController {
                 products.get(choiceOfProduct),
                 area);
         
+    }
+
+    private void removeAnOrder() {
+        LocalDate ld=view.getFutureDate();
+        int orderNumber=view.getOrderNumber();
+        boolean isSucessfullyFoundAndRemoved = service.removeOrder(ld,orderNumber);
+    }
+
+    private void editAnOrder() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
