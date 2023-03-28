@@ -1,0 +1,6 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+17,Jordan Paille,TX,4.45,Carpet,200,2.25,2.10,450.00,420.00,38.72,908.72
+18,Nadroj Straw,WA,9.25,Laminate,200,1.75,2.10,350.00,420.00,71.22,841.22
+19,Strawest Jo,KY,6.00,Wood,300,5.15,4.75,1545.00,1425.00,178.20,3148.20
+20,Jordan,KY,6.00,Wood,200,5.15,4.75,1030.00,950.00,118.80,2098.80
+23,Jordan,WA,9.25,Tile,300,3.50,4.15,1050.00,1245.00,212.29,2507.29

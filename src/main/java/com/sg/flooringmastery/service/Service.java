@@ -91,7 +91,6 @@ public class Service {
                     total,
                     ld
                             );
-        System.out.println(order);
         dao.addNewOrderToStorage(order);
         return order;
     }

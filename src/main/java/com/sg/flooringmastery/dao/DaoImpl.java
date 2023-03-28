@@ -215,7 +215,6 @@ public class DaoImpl implements Dao{
             writer.write(HEADER);
             writer.write(toStore);
             writer.close();
-            System.out.println("Text appended to the file successfully.");
         } catch (IOException e) {
             System.out.println("An error occurred while appending text to the file.");
             e.printStackTrace();
@@ -228,7 +227,7 @@ public class DaoImpl implements Dao{
         if (file.exists()) {
             boolean deleted = file.delete();
             if (deleted) {
-                System.out.println("File deleted successfully");
+                //This is good.
             } else {
                 System.out.println("Failed to delete the file");
             }

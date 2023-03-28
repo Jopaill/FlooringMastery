@@ -93,21 +93,103 @@ public class FlooringController {
                 states.get(choiceOfState),
                 products.get(choiceOfProduct),
                 area);
-        
+        view.displayOrderSuccessfullyCreated(ord);
     }
 
     private void removeAnOrder() {
         LocalDate ld=view.getFutureDate();
         int orderNumber=view.getOrderNumber();
         boolean isSucessfullyFoundAndRemoved = service.removeOrder(ld,orderNumber);
+        view.removeOrderSuccess(isSucessfullyFoundAndRemoved, orderNumber,ld);
     }
 
-    private void editAnOrder() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void editAnOrder() throws IOException {
+        LocalDate ld=view.getFutureDate();
+        int orderNumber=view.getOrderNumber();
+        List<Order> orders=service.getOrdersForDate(ld);
+        boolean found=false;
+        Order changingOrder=null;
+        for(Order order :orders){
+            if(order.getOrderNumber()==orderNumber){
+                changingOrder=order;
+                found=true;
+                break;
+            }
+        }
+        if(!found){
+            view.displayOrderNotFound(ld,orderNumber);
+            return;
+        }
+        
+        view.displayOrderFoundToBeEditted(changingOrder);
+        //Customer name:
+        String name;
+        int choice=
+            view.displayingCustomerNameAndAskChange(changingOrder.getCustomerName());
+        if(choice==1){
+            name=view.getName();
+        }else{
+            name=changingOrder.getCustomerName();
+        }
+        
+        //State
+        String shortState=changingOrder.getState();
+        String longState=null;
+        StateInfo state=null;
+        List<StateInfo> states=service.getStateInfos();
+        for(StateInfo stateInfo: states){
+            if(stateInfo.getState().equals(shortState)){
+                longState=stateInfo.getStateName();
+                state=stateInfo;
+                break;
+            }
+        }
+        int choiceState=view.displayCurrentStateAndAskChange(longState);
+        
+        if(choiceState==1){
+            int choiceNewState=
+                view.displayStatesAndGetChoice(states);
+            state=states.get(choiceNewState);
+        }
+        
+        //Product
+        String currentProduct=changingOrder.getProductType();
+        int choiceProduct=view.displayCurrentProductAndAskChange(currentProduct);
+        Product product=null;
+        List<Product> products=service.getProducts();
+        if(choiceProduct==1){
+            int choiceNewProduct=
+                view.displayProductsAndGetChoice(products);
+            product=products.get(choiceNewProduct);
+        }else{
+            for(Product productInList:products){
+                if(productInList.getProductType().equals(currentProduct)){
+                    product=productInList;
+                    break;
+                }
+            }
+        }
+        
+        //area
+        BigDecimal currentArea=changingOrder.getArea();
+        int choiceArea=view.displayCurrentAreaAndAskChange(currentArea);
+        BigDecimal area;
+        if(choiceArea==1){
+            area=view.getAreaWanted();
+        }else{
+            area=currentArea;
+        }
+        
+        //We can now create the order
+        Order ord = service.createNewOrder(
+                ld, 
+                name, 
+                state,
+                product,
+                area);
+        
+        
+        service.removeOrder(ld, orderNumber);
+        view.displayOrderSuccessfully(ord);
     }
-    
-    
-    
-    
-    
 }

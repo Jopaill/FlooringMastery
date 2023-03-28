@@ -224,4 +224,64 @@ public class View {
     public int getOrderNumber() {
         return io.readInt("What is the order number?");
     }
+
+    public void removeOrderSuccess(boolean sucessfullyFoundAndRemoved, int orderNumber, LocalDate ld) {
+        if(sucessfullyFoundAndRemoved){
+            io.print("The order "+orderNumber+" was successfully removed!");
+        }else{
+            io.print("The order "+orderNumber+" was not removed. Something didn't work. Make sure your order number and date are correct and try again");
+        }
+    }
+
+    public void displayOrderNotFound(LocalDate ld, int orderNumber) {
+        io.print("The order "+orderNumber+" on date "+ld+" is non-existent.\nReturning to main menu");
+    }
+
+    public void displayOrderFoundToBeEditted(Order changingOrder) {
+        io.print("We found the following order");
+        displayOrder(changingOrder, 1);
+        io.readString("\nPress enter to continue");
+    }
+
+    public int displayingCustomerNameAndAskChange(String customerName) {
+        io.print("The current name for the order is :"+customerName);
+        io.print("Do you want to change it?");
+        int choice=io.readInt("   - 1: Yes\n   - 2: No",1 ,2);
+        return choice;
+    }
+
+
+    public int displayCurrentStateAndAskChange(String currentState) {
+        io.print("The current state for the order is :"+currentState);
+        io.print("Do you want to change it?");
+        int choice=io.readInt("   - 1: Yes\n   - 2: No",1 ,2);
+        return choice;
+    }
+
+    public int displayCurrentProductAndAskChange(String currentProduct) {
+        io.print("The current product for the order is :"+currentProduct);
+        io.print("Do you want to change it?");
+        int choice=io.readInt("   - 1: Yes\n   - 2: No",1 ,2);
+        return choice;
+    }
+
+    public int displayCurrentAreaAndAskChange(BigDecimal currentArea) {
+        io.print("The current area for the order is :"+currentArea);
+        io.print("Do you want to change it?");
+        int choice=io.readInt("   - 1: Yes\n   - 2: No",1 ,2);
+        return choice;
+    }
+
+    public void displayOrderSuccessfully(Order ord) {
+        io.print("The order got sucessfully editted. Here is the new order");
+        displayOrder(ord, 1);
+        io.print("Warning. Your order number has changed");
+    }
+
+    public void displayOrderSuccessfullyCreated(Order ord) {
+        io.print("The following order got successfully created");
+        displayOrder(ord,1);
+        io.print("Return to main menu");
+    }
+
 }
