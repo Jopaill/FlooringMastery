@@ -31,4 +31,6 @@ public interface Dao {
     public void addNewOrderToStorage(Order order);
 
     public void removeAllOrdersForDay(String string);
+
+    public void exportAllData();
 }

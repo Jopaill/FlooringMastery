@@ -115,6 +115,10 @@ public class Service {
         }
         return true;      
     }
+
+    public void exportAllData() {
+        dao.exportAllData();
+    }
     
     
 }

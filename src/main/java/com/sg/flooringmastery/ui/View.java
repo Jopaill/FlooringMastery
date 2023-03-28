@@ -284,4 +284,8 @@ public class View {
         io.print("Return to main menu");
     }
 
+    public void displayDataSuccessfullyExported() {
+        io.print("The data was successfully exported");
+    }
+
 }

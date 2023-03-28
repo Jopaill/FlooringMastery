@@ -20,6 +20,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -41,6 +43,9 @@ public class DaoImpl implements Dao{
     private BigDecimal total;
     
     private final String ORDERS_PREFIX="Orders/";
+    private final String BACKUP_FILE="Backup/DataExport.txt";
+    private final String PATH_TO_ORDER="Orders/";
+    private final String ORDER_NUMBER_FILE="OrderNumber.txt";
     private final String HEADER="OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total";
     
     public List<Order> retrieveAllOrderOfFile(String nameOfFile) 
@@ -236,5 +241,40 @@ public class DaoImpl implements Dao{
         }
     }
 
-    
+    @Override
+    public void exportAllData(){
+        //BACKUP_FILE
+        List<String> orders = new ArrayList<>();
+        File folder = new File(PATH_TO_ORDER);
+        File[] files = folder.listFiles();
+        for(File file:files){
+            if(
+                file.isFile() &&
+                !file.getName().equals(ORDER_NUMBER_FILE)
+            ){
+                String date=file.getName().substring(7,15);
+                try (BufferedReader br = new BufferedReader(new FileReader(file))){
+                    String line=br.readLine();
+                    while ((line = br.readLine()) != null) {
+                        orders.add(line+","+date);
+                    }
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(DaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                    Logger.getLogger(DaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(BACKUP_FILE))) {
+            bw.write(HEADER+",date");
+            bw.newLine();
+            for(String st: orders){
+                bw.write(st);
+                bw.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

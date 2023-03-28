@@ -40,20 +40,13 @@ public class FlooringController {
                     break;
                 case 3: //add
                     editAnOrder();
+                    break;
                 case 4: //Remove an order
                     removeAnOrder();
                     break;
-                case 5: //delete
-//                    String deleteTitle = view.getBookTitleToDelete();
-//                    Book deleteBook = service.getBookByTitle(deleteTitle);
-//                    if(deleteBook != null) {
-//                        service.deleteBookByTitle(deleteTitle);
-//                        view.displayDeleteSuccess();
-//                    } else {
-//                        view.displayError("Book doesn't exist");
-//                    }
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                    //break;
+                case 5: //Export all data
+                    exportAllData();
+                    break;
                 case 6: //exit
                     view.displayExit();
                     System.exit(0);
@@ -191,5 +184,10 @@ public class FlooringController {
         
         service.removeOrder(ld, orderNumber);
         view.displayOrderSuccessfully(ord);
+    }
+
+    private void exportAllData() {
+        service.exportAllData();
+        view.displayDataSuccessfullyExported();
     }
 }
